@@ -22,7 +22,9 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_main" />
+        layout="@layout/content_main"
+        app:layout_anchor="@+id/button"
+        app:layout_anchorGravity="center" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -36,7 +38,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Josh"
+        android:text="Josh1"
         android:visibility="visible"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center" />
