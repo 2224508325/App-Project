@@ -35,11 +35,12 @@
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <Button
+        android:id="@+id/Andybtn"
         android:layout_width="wrap_content"
         android:layout_height="339dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:text="Andy here" />
+        android:text="Start" />
 
     <Button
         android:id="@+id/button"
