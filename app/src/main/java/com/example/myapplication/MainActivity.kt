@@ -10,8 +10,7 @@ import android.view.MenuItem
 
 
 import android.widget.Button
-
-
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,8 +24,14 @@ class MainActivity : AppCompatActivity() {
         start_button.setOnClickListener {
             val intent = Intent(this, AndyActivity::class.java)
             startActivity(intent)
-
         }
+        // for EricActivity
+        val eric: Button = findViewById(R.id.ericActivity)
+        eric.setOnClickListener {
+            startActivity(Intent(this,EricActivity::class.java))
+        }
+        Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
+
     }
 
         fun setstop() {
