@@ -5,15 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441"
-        tools:layout_editor_absoluteX="111dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="166dp">
+
+        <EditText
+            android:id="@+id/InputID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="number"
+            app:layout_anchorGravity="center" />
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/InputManufactor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Manufactor"
+            android:inputType="text"
+            app:layout_anchorGravity="center" />
+            android:hint="Manufactor"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/InputName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            app:layout_anchorGravity="center" />
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchorGravity="center"
+            tools:text="Save" />
+            android:text="Save" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

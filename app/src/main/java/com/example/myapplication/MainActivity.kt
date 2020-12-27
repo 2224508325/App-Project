@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
         Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
 
+
     }
 
         fun setstop() {
