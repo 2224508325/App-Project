@@ -55,12 +55,18 @@
         android:layout_gravity="bottom"
         android:text="Eric" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/Joshua"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/showItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="showItem" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_scan"

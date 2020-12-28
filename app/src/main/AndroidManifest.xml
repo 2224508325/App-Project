@@ -34,6 +34,8 @@
             android:value="barcode" />
         <activity android:name=".EricActivity" />
         <activity android:name=".JoshuaActivity" />
+        <activity android:name=".retrieveActivity2" />
+
     </application>
 
 
