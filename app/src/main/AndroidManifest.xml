@@ -13,6 +13,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar"
             >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +28,13 @@
             android:theme="@style/Theme.MyApplication.NoActionBar">
 
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
         <activity android:name=".EricActivity" />
         <activity android:name=".JoshuaActivity" />
     </application>
+
 
 </manifest>
