@@ -32,6 +32,17 @@ class MainActivity : AppCompatActivity() {
         }
         Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
 
+        val josh1: Button = findViewById(R.id.Joshua)
+        josh1.setOnClickListener {
+            val intent = Intent(this, JoshuaActivity::class.java)
+            startActivity(intent)
+        }
+
+        val showData: Button = findViewById(R.id.showItem)
+        showData.setOnClickListener {
+            val intent = Intent(this, retrieveActivity2::class.java)
+            startActivity(intent)
+        }
 
     }
 
