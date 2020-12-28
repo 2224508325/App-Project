@@ -10,15 +10,11 @@ class AndyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_andy)
 
-
-
         val AndyBack: Button = findViewById(R.id.AndyBackbtn)
             AndyBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
         }
-
-
     }
 }

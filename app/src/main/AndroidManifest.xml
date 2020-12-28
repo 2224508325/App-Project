@@ -21,9 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".EricActivity" />
-        <activity android:name=".ericTest" />
-        <activity android:name=".retrieveActivity2" />
-
     </application>
 
 </manifest>
