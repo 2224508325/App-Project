@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        //setSupportActionBar(findViewById(R.id.toolbar))
 
 
         val start_button: Button = findViewById(R.id.Andybtn)
@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         eric.setOnClickListener {
             startActivity(Intent(this,EricActivity::class.java))
         }
+
+        val showData: Button = findViewById(R.id.showItem)
+        showData.setOnClickListener {
+            startActivity(Intent(this,retrieveActivity2::class.java))
+        }
+
         Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
 
 

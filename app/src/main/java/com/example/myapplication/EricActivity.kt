@@ -19,6 +19,7 @@ class EricActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eric)
 
+
         // Eric: for firestore save data
         val save_button: Button = findViewById(R.id.Save)
         save_button.setOnClickListener {
@@ -31,7 +32,7 @@ class EricActivity: AppCompatActivity() {
         //
     }
     fun saveFireStore(){
-        val id = ID.text.toString()
+        val id = ID.text.toString().toInt()
         val manufactor = Manufactor.text.toString().trim()
         val name = Name.text.toString().trim()
 

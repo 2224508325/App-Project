@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/showData"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,7 +21,7 @@
             android:hint="ID"
             android:inputType="number"
             app:layout_anchorGravity="center" />
-            android:inputType="number" />
+        android:inputType="number" />
 
         <EditText
             android:id="@+id/InputManufactor"
@@ -30,8 +31,8 @@
             android:hint="Manufactor"
             android:inputType="text"
             app:layout_anchorGravity="center" />
-            android:hint="Manufactor"
-            android:inputType="textPersonName" />
+        android:hint="Manufactor"
+        android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/InputName"
@@ -41,8 +42,8 @@
             android:hint="Name"
             android:inputType="text"
             app:layout_anchorGravity="center" />
-            android:hint="Name"
-            android:inputType="textPersonName" />
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/Save"
@@ -50,7 +51,13 @@
             android:layout_height="wrap_content"
             app:layout_anchorGravity="center"
             tools:text="Save" />
-            android:text="Save" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ShowData" />
+        android:text="Save" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
