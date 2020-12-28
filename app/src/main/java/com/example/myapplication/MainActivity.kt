@@ -20,13 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-        val btn_scan: Button = findViewById(R.id.btn_scan)
-        btn_scan.setOnClickListener {
-            val scanner = IntentIntegrator(this)
-            scanner.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            scanner.setBeepEnabled(false)
-            scanner.initiateScan()
-        }
 
 
         val start_button: Button = findViewById(R.id.Andybtn)
