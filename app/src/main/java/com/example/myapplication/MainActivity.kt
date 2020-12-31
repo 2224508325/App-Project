@@ -21,19 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-
-        val start_button: Button = findViewById(R.id.Andybtn)
-        start_button.setOnClickListener {
-            val intent = Intent(this, AndyActivity::class.java)
-            startActivity(intent)
-        }
-
-        val josh1: Button = findViewById(R.id.Joshua)
-        josh1.setOnClickListener {
-            val intent = Intent(this, JoshuaActivity::class.java)
-            startActivity(intent)
-        }
-
             // for EricActivity
             val eric: Button = findViewById(R.id.ericActivity)
             eric.setOnClickListener {
