@@ -28,7 +28,16 @@ class EricActivity: AppCompatActivity() {
             Name = findViewById(R.id.InputName)
             saveFireStore()
         }
+        val showData: Button = findViewById(R.id.show)
+        showData.setOnClickListener {
+            startActivity(Intent(this, retrieveActivity2::class.java))
+        }
 
+
+        val showP: Button = findViewById(R.id.showProductView)
+        showP.setOnClickListener {
+            startActivity(Intent(this, retrieveProduct::class.java))
+        }
         //
     }
     fun saveFireStore(){

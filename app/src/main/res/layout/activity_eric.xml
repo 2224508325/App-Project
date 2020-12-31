@@ -53,10 +53,16 @@
             tools:text="Save" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/show"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ShowData" />
+
+        <Button
+            android:id="@+id/showProductView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show product sample" />
         android:text="Save" />
     </LinearLayout>
 
