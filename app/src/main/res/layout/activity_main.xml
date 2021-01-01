@@ -15,12 +15,7 @@
     android:layout_height="match_parent"
     android:layout_above="@+id/bottom_navigation">
 
-    <Button
-        android:id="@+id/ericActivity"
-        android:layout_width="80dp"
-        android:layout_height="56dp"
-        android:layout_gravity="center"
-        android:text="Eric" />
+
 </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -11,6 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </RelativeLayout>
-
+    <Button
+        android:id="@+id/ericStartActivity"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:text="Eric" />
 
 </FrameLayout>

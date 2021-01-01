@@ -26,13 +26,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+/*
             // for EricActivity
-            val eric: Button = findViewById(R.id.ericActivity)
-            eric.setOnClickListener {
+            val ericStart: Button = findViewById(R.id.ericStartActivity)
+            ericStart.setOnClickListener {
                 startActivity(Intent(this, EricActivity::class.java))
             }
             Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
-
+*/
 
 
         //Andy's Part

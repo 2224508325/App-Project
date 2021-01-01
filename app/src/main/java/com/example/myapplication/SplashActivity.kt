@@ -30,7 +30,7 @@ class SplashActivity : AppCompatActivity() {
                     startActivity(Intent(this@SplashActivity,MainActivity::class.java))
                     finish()
                 },
-                2000
+                800
         )
     }
 }
