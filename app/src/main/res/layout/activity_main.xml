@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +9,32 @@
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+<FrameLayout
+    android:id="@+id/fl_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/bottom_navigation">
+
+    <Button
+        android:id="@+id/ericActivity"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:text="Eric" />
+</FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/design_default_color_primary"
+        app:itemIconTint="#fff"
+        app:itemTextColor="#fff"
+        app:menu="@menu/menu_main"/>
+
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,12 +43,4 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <Button
-        android:id="@+id/ericActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_gravity="bottom"
-        android:text="Eric" />
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

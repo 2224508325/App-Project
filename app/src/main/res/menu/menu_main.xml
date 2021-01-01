@@ -2,9 +2,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.myapplication.MainActivity">
+
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/ic_product"
+        android:icon="@drawable/product"
+        android:title="@string/Product"
+
+    />
+    <item
+        android:id="@+id/ic_symptom"
+        android:icon="@drawable/symptom"
+        android:title="@string/Symptom"/>
+    <item
+        android:id="@+id/ic_doctor"
+        android:icon="@drawable/doctor"
+        android:title="@string/Doctor"/>
+
+
+
+
+
+
+
 </menu>
