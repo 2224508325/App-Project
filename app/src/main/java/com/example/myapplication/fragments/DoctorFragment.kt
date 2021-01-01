@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.example.myapplication.EricActivity
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.SearchActivity
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_doctor.*
@@ -24,23 +25,21 @@ import kotlin.math.E
 class DoctorFragment : Fragment() {
 
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ericStartActivity.setOnClickListener {
-            //FirebaseAuth.getInstance().signOut()
+        ericStart.setOnClickListener {
             val intent = Intent (activity, EricActivity::class.java)
             startActivity(intent)
         }
+        searchStartActivity.setOnClickListener {
+            val intent = Intent (activity, SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,9 +48,6 @@ class DoctorFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_doctor, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
 
     
 }

@@ -8,11 +8,9 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.*
 
 
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.myapplication.fragments.DoctorFragment
 import com.example.myapplication.fragments.ProductFragmet
@@ -21,22 +19,27 @@ import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    //list view for search
+    private lateinit var adapter: ArrayAdapter<*>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 /*
-            // for EricActivity
-            val ericStart: Button = findViewById(R.id.ericStartActivity)
-            ericStart.setOnClickListener {
-                startActivity(Intent(this, EricActivity::class.java))
-            }
-            Toast.makeText(this, "Firebase Connection Success", Toast.LENGTH_LONG).show()
-*/
+       //for search
+        adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,resources.getStringArray(R.array.countries_array))
+        lv_listview.adapter = adapter
+        lv_listview.onItemClickListener = AdapterView.OnItemClickListener {parent,view,position,id ->
+            Toast.makeText(applicationContext,parent?.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT ).show()
+        }
+        lv_listview.emptyView = tv_emptyTextView
+        //search ended*/
 
 
-        //Andy's Part
+
+
+        //Bottom Nav
         val productFragment = ProductFragmet()
         val symptomFragment = SymptomFragment()
         val doctorFragment = DoctorFragment()
@@ -48,19 +51,40 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_doctor -> makeCurrentFragment(doctorFragment)
             }
             true
-        } //End of Andy's Part
+        } //End Bottom Nav
 
 
 
     }
 
-    //Andy Part
+
+/*    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_search,menu)
+        val search = menu?.findItem(R.id.nav_search)
+        val searchView = search?.actionView as SearchView
+        searchView.queryHint = "Search Here"
+
+    searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+        override fun onQueryTextSubmit(query: String?): Boolean {
+            return false
+        }
+
+        override fun onQueryTextChange(newText: String?): Boolean {
+            adapter.filter.filter(newText)
+            return true
+        }
+    })
+        return super.onCreateOptionsMenu(menu)
+
+    }
+    //end Top search*/
+
+   //Bottom Nav
     private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fl_wrapper, fragment)
             commit()
         }
-    //End Andy part
-
+    //End Bottom Nav
 
     }
