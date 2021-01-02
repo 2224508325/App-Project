@@ -67,10 +67,14 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.BarcodeScan ->{
                 Toast.makeText(applicationContext,"Barcode not ready yet",Toast.LENGTH_SHORT).show()
+                val scanner = IntentIntegrator(this)
+                scanner.initiateScan()
             }
         }
         return false
     }
+
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -92,6 +96,15 @@ class MainActivity : AppCompatActivity() {
     //End Bottom Nav
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            if (result.contents == null) Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+            else Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
 
 
     }
