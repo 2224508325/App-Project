@@ -18,7 +18,6 @@ class EricActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eric)
 
-
         // Eric: for firestore save data
         val save_button: Button = findViewById(R.id.Save)
         save_button.setOnClickListener {
