@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.internal.Storage
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import java.util.Arrays
 
 
 class retrieveActivity2 : AppCompatActivity() {
@@ -17,7 +18,7 @@ class retrieveActivity2 : AppCompatActivity() {
         setContentView(R.layout.reult_activity)
 
         //readFireStoreData()
-        readProduct("herb")
+        findProductByName("herb")
     }
 
     fun readFireStoreData(){
@@ -44,7 +45,35 @@ class retrieveActivity2 : AppCompatActivity() {
 
     }
 
-    fun readProduct(name: String){
+    //use for arraysearch
+    fun append(arr: Array<String>, element: String): Array<String> {
+        val list: MutableList<String> = arr.toMutableList()
+        list.add(element)
+        return list.toTypedArray()
+    }
+    //use for array search
+    fun productArray():Array<String>{
+        var names:Array<String> = emptyArray()
+
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Product")
+                .get()
+                .addOnCompleteListener{
+                    val result: StringBuffer = StringBuffer()
+
+                    if(it.isSuccessful){
+                        for(document in it.result!!){
+                            result.append(document.data.getValue("Product_Name"))
+                            names = append(names, result.toString())
+
+                        }
+                    }
+
+                }
+        return names
+    }
+    // use for product page
+    fun findProductByName(name: String){
         val db = FirebaseFirestore.getInstance()
         db.collection("Product").whereEqualTo("Product_Name",name)
                 .get()
