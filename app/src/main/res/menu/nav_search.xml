@@ -8,6 +8,9 @@
         android:icon="@drawable/ic_search"
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="ifRoom|withText"/>
+        app:showAsAction="always"
+        android:background="@color/design_default_color_primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
 
 </menu>

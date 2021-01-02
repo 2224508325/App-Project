@@ -7,9 +7,7 @@
     <item
         android:id="@+id/ic_product"
         android:icon="@drawable/product"
-        android:title="@string/Product"
-
-    />
+        android:title="@string/Product"/>
     <item
         android:id="@+id/ic_symptom"
         android:icon="@drawable/symptom"
@@ -18,11 +16,5 @@
         android:id="@+id/ic_doctor"
         android:icon="@drawable/doctor"
         android:title="@string/Doctor"/>
-
-
-
-
-
-
 
 </menu>

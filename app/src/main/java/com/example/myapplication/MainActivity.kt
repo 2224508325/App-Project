@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+
+        //Top Search Icon Call
+        setSupportActionBar(ToolBar)
+
         //Bottom Nav
         val productFragment = ProductFragmet()
         val symptomFragment = SymptomFragment()
@@ -44,6 +50,22 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+/*    //Top Bar
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.customactionbar,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var itemview = item.itemId
+        when(itemview){
+            R.id.Search -> Toast.makeText(applicationContext,"Search CLicked",Toast.LENGTH_SHORT).show()
+            R.id.BarcodeScan -> Toast.makeText(applicationContext,"Scanner CLicked",Toast.LENGTH_SHORT).show()
+        }
+        return false
+    }
+    //End of Top Bar*/
 
 
    //Bottom Nav
