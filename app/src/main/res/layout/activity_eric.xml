@@ -41,9 +41,23 @@
             android:ems="10"
             android:hint="Name"
             android:inputType="text"
-            app:layout_anchorGravity="center" />
+            app:layout_anchorGravity="center" /><![CDATA[
         android:hint="Name"
         android:inputType="textPersonName" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ]]>
 
         <Button
             android:id="@+id/Save"
