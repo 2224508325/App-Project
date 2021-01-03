@@ -16,6 +16,12 @@
     <string name="Product">Product</string>
     <string name="Symptom">Symptom</string>
     <string name="Doctor">Doctor</string>
+    <string name="head">Head</string>
+    <string name="chest">chest</string>
+    <string name="left_hand">left hand</string>
+    <string name="right_hand">right hand</string>
+    <string name="belly">belly</string>
+    <string name="feet">feet</string>
 
 
     <string-array name="countries_array">
