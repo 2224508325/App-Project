@@ -10,6 +10,7 @@ import android.widget.Adapter
 import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.core.view.doOnLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,6 +32,8 @@ class Recyclerview : AppCompatActivity() {
         setContentView(R.layout.activity_recyclerview)
 
         setSupportActionBar(ToolBar)
+        //set no animation
+        window.setWindowAnimations(0)
 
         //initilize with empety array list
 
@@ -62,8 +65,14 @@ class Recyclerview : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
+
+
+
         menuInflater.inflate(R.menu.nav_search, menu)
+
         val menuItem = menu!!.findItem(R.id.SearchButton)
+
+
         if(menuItem != null){
             val searchView = menuItem.actionView as SearchView
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{

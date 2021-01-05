@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import com.example.myapplication.R
-import com.example.myapplication.SearchActivity
+
 import com.example.myapplication.retrieveActivity2
 
 class SymptomFragment : Fragment() {

@@ -7,11 +7,12 @@
         android:id="@+id/SearchButton"
         android:icon="@drawable/ic_search"
         android:title="Search"
-
-        app:showAsAction="always"
+        app:showAsAction="collapseActionView|always"
         android:background="@color/design_default_color_primary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         />
+
+
     <item
         android:id="@+id/BarcodeScan"
         android:icon="@drawable/ic_barcodescan"
@@ -19,5 +20,7 @@
         app:showAsAction="always"
         >
     </item>
+
+
 
 </menu>

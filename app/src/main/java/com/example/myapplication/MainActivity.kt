@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -8,6 +9,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.widget.SearchView
 
@@ -36,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         //Top Search Icon Call
         setSupportActionBar(ToolBar)
 
+        //
 
 
 
@@ -74,16 +78,15 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
-
-
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.nav_search, menu)
         val menuItem = menu!!.findItem(R.id.SearchButton)
+
+
         return true
     }
-    //Top Search with Strings
+    //End Top Search with Strings
 
 
 
