@@ -21,6 +21,8 @@ class retrieveActivity2 : AppCompatActivity() {
         //var testList : ProductList
         val message : String? = getIntent().getStringExtra("ProductNameID")
 
+        //readFireStoreData()
+        findProductByName("herb test medicine")
         if (message != null) {
             findProductByName(message)
         }
@@ -51,29 +53,31 @@ class retrieveActivity2 : AppCompatActivity() {
     }
 
     //use for arraysearch
-    /*
     fun append(arr: Array<String>, element: String): Array<String> {
         val list: MutableList<String> = arr.toMutableList()
         list.add(element)
         return list.toTypedArray()
-    }*/
+    }
     //use for array search
-    fun productArray(){
+    fun productArray():Array<String>{
+        var names:Array<String> = emptyArray()
 
         val db = FirebaseFirestore.getInstance()
         db.collection("Product")
                 .get()
-                .addOnSuccessListener{
+                .addOnCompleteListener{
                     val result: StringBuffer = StringBuffer()
 
-                    if(it.isEmpty!!){
-                        for(document in it.documents){
-                            result.append(document.data?.getValue("Product_Name"))
-                            testList.addList(result.toString())
+                    if(it.isSuccessful){
+                        for(document in it.result!!){
+                            result.append(document.data.getValue("Product_Name"))
+                            names = append(names, result.toString())
 
                         }
                     }
+
                 }
+        return names
     }
     // use for product page
     fun findProductByName(name: String){
