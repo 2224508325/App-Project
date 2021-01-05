@@ -35,7 +35,7 @@
         <activity android:name=".ericSearchActivity" />
 
         <activity
-            android:name=".Recyclerview"
+            android:name=".Andy.Recyclerview"
             android:label="@string/title_activity_recyclerview"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
 

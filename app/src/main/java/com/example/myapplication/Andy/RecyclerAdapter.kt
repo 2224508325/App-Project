@@ -1,16 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.Andy
 
-import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.ProductTempleteinRecyclerView
+import com.example.myapplication.R
+import com.example.myapplication.retrieveActivity2
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_recyclerview.*
-import kotlinx.android.synthetic.main.fragment_doctor.*
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
 class RecyclerAdapter (private var givenData:ArrayList<ProductTempleteinRecyclerView>) :

@@ -1,18 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.Andy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.core.view.doOnLayout
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.ProductTempleteinRecyclerView
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recyclerview.*
 import java.util.*
@@ -52,7 +49,7 @@ class Recyclerview : AppCompatActivity() {
 
         when(itemview){
             R.id.SearchButton -> {
-                val intent = Intent(this,Recyclerview::class.java)
+                val intent = Intent(this, Recyclerview::class.java)
                 startActivity(intent)
             }
             R.id.BarcodeScan ->{

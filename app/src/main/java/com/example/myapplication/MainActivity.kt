@@ -1,30 +1,20 @@
 package com.example.myapplication
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import androidx.appcompat.widget.SearchView
 
 
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Andy.Recyclerview
 import com.example.myapplication.fragments.DoctorFragment
 import com.example.myapplication.fragments.ProductFragmet
 import com.example.myapplication.fragments.SymptomFragment
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_recyclerview.*
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -66,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         when(itemview){
             R.id.SearchButton -> {
-                val intent = Intent(this,Recyclerview::class.java)
+                val intent = Intent(this, Recyclerview::class.java)
                 startActivity(intent)
             }
             R.id.BarcodeScan ->{
