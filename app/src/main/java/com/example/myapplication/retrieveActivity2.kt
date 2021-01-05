@@ -19,9 +19,11 @@ class retrieveActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.reult_activity)
         //var testList : ProductList
+        val message : String? = getIntent().getStringExtra("ProductNameID")
 
-
-        findProductByName("herb test medicine")
+        if (message != null) {
+            findProductByName(message)
+        }
     }
 
     fun readFireStoreData(){

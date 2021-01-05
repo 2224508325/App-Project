@@ -20,7 +20,9 @@ class searchListAdapterEric(var searchList: List<searchModel>): RecyclerView.Ada
         init{
             itemView.setOnClickListener{
                 val intent= Intent(itemView.context, retrieveActivity2::class.java)
+                intent.putExtra("ProductNameID",ProductNameID.text.toString().toLowerCase())
                 itemView.context.startActivity(intent)
+
 
                 val snack: String = "Item position Clicked: $adapterPosition"
                 Snackbar.make(itemView,snack, Snackbar.LENGTH_SHORT).show()
