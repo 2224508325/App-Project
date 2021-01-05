@@ -36,6 +36,11 @@ class EricActivity: AppCompatActivity() {
         showP.setOnClickListener {
             startActivity(Intent(this, retrieveProduct::class.java))
         }
+
+        val search: Button = findViewById(R.id.search)
+        search.setOnClickListener {
+            startActivity(Intent(this, ericSearchActivity::class.java))
+        }
         //
     }
     fun saveFireStore(){

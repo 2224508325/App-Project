@@ -13,12 +13,15 @@ import java.util.Arrays
 
 
 class retrieveActivity2 : AppCompatActivity() {
+    private val testList: ProductList = ProductList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.reult_activity)
+        //var testList : ProductList
 
-        //readFireStoreData()
-        findProductByName("herb")
+
+        findProductByName("herb test medicine")
     }
 
     fun readFireStoreData(){
@@ -46,31 +49,29 @@ class retrieveActivity2 : AppCompatActivity() {
     }
 
     //use for arraysearch
+    /*
     fun append(arr: Array<String>, element: String): Array<String> {
         val list: MutableList<String> = arr.toMutableList()
         list.add(element)
         return list.toTypedArray()
-    }
+    }*/
     //use for array search
-    fun productArray():Array<String>{
-        var names:Array<String> = emptyArray()
+    fun productArray(){
 
         val db = FirebaseFirestore.getInstance()
         db.collection("Product")
                 .get()
-                .addOnCompleteListener{
+                .addOnSuccessListener{
                     val result: StringBuffer = StringBuffer()
 
-                    if(it.isSuccessful){
-                        for(document in it.result!!){
-                            result.append(document.data.getValue("Product_Name"))
-                            names = append(names, result.toString())
+                    if(it.isEmpty!!){
+                        for(document in it.documents){
+                            result.append(document.data?.getValue("Product_Name"))
+                            testList.addList(result.toString())
 
                         }
                     }
-
                 }
-        return names
     }
     // use for product page
     fun findProductByName(name: String){
