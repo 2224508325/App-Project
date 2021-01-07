@@ -19,12 +19,16 @@ class retrieveActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.reult_activity)
         //var testList : ProductList
-        val message : String? = getIntent().getStringExtra("ProductNameID")
+        val product_name : String? = getIntent().getStringExtra("ProductNameID")
+        val bar_code_number : String? = getIntent().getStringExtra("Bar_Code_Number")
 
         //readFireStoreData()
         findProductByName("herb test medicine")
-        if (message != null) {
-            findProductByName(message)
+        if (product_name != null) {
+            findProductByName(product_name)
+        }
+        else if (bar_code_number!= null){
+            findProductByBarCodeNumber(bar_code_number)
         }
     }
 
@@ -95,6 +99,8 @@ class retrieveActivity2 : AppCompatActivity() {
                     val desc: StringBuffer = StringBuffer()
                     val ind: StringBuffer = StringBuffer()
                     val SA: StringBuffer = StringBuffer()
+                    val testArray: StringBuffer = StringBuffer()
+                    val testArray2: StringBuffer = StringBuffer()
 
 
                     if(it.isSuccessful){
@@ -109,6 +115,15 @@ class retrieveActivity2 : AppCompatActivity() {
                             desc.append(document.data.getValue("Description"))
                             ind.append(document.data.getValue("Indication"))
                             SA.append(document.data.getValue("Side_Affect"))
+
+                            /*
+                            var ta :Array<String> = emptyArray()
+                            testArray.append(document.data.getValue("Test_Array").toString())
+                            for (s:String in ta){
+                                testArray2.append(s)
+                            }
+                            */
+
                             // Reference to an image file in Cloud Storage
                             //val storageReference = FirebaseStorage.getInstance()
 
@@ -123,6 +138,108 @@ class retrieveActivity2 : AppCompatActivity() {
 
 
                         }
+                        /*
+                        var textViewArray: TextView
+                        textViewArray = findViewById(R.id.textViewArray)
+                        textViewArray.setText(testArray)
+                        */
+
+
+                        var textViewprName : TextView
+                        textViewprName = findViewById(R.id.testName)
+                        textViewprName.setText(prName)
+
+                        var textViewbcNum : TextView
+                        textViewbcNum = findViewById(R.id.testBarCodeNum)
+                        textViewbcNum.setText(bcNum)
+
+                        var textViewpac : TextView
+                        textViewpac = findViewById(R.id.testPackage)
+                        textViewpac.setText(pac)
+
+                        var textViewbrand : TextView
+                        textViewbrand = findViewById(R.id.testBrand)
+                        textViewbrand.setText(brand)
+
+                        var textViewmanfac : TextView
+                        textViewmanfac = findViewById(R.id.testManufacture)
+                        textViewmanfac.setText(manfac)
+
+                        var textViewmIngre : TextView
+                        textViewmIngre = findViewById(R.id.testMainIngredient)
+                        textViewmIngre.setText(mIngre)
+
+                        var textViewaIngre : TextView
+                        textViewaIngre = findViewById(R.id.testAllIngredient)
+                        textViewaIngre.setText(aIngre)
+
+                        var textViewdesc : TextView
+                        textViewdesc = findViewById(R.id.testDescription)
+                        textViewdesc.setText(desc)
+
+                        var textViewind : TextView
+                        textViewind = findViewById(R.id.testIndication)
+                        textViewind.setText(ind)
+
+                        var textViewSA : TextView
+                        textViewSA = findViewById(R.id.testSideAffect)
+                        textViewSA.setText(SA)
+
+                    }
+
+                }
+    }
+
+    fun findProductByBarCodeNumber(num: String){
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Product").whereEqualTo("Bar_Code_Number",num)
+                .get()
+                .addOnCompleteListener{
+                    val prName: StringBuffer = StringBuffer()
+                    val bcNum: StringBuffer = StringBuffer()
+                    val pac: StringBuffer = StringBuffer()
+                    val brand: StringBuffer = StringBuffer()
+                    val manfac: StringBuffer = StringBuffer()
+                    val mIngre: StringBuffer = StringBuffer()
+                    val aIngre: StringBuffer = StringBuffer()
+                    val desc: StringBuffer = StringBuffer()
+                    val ind: StringBuffer = StringBuffer()
+                    val SA: StringBuffer = StringBuffer()
+                    val testArray: StringBuffer = StringBuffer()
+                    val testArray2: StringBuffer = StringBuffer()
+
+
+                    if(it.isSuccessful){
+                        for(document in it.result!!){
+                            prName.append(document.data.getValue("Product_Name"))
+                            bcNum.append(document.data.getValue("Bar_Code_Number"))
+                            pac.append(document.data.getValue("Package"))
+                            brand.append(document.data.getValue("Brand"))
+                            manfac.append(document.data.getValue("Manufacture"))
+                            mIngre.append(document.data.getValue("Main_Ingredient"))
+                            aIngre.append(document.data.getValue("All_Ingredient"))
+                            desc.append(document.data.getValue("Description"))
+                            ind.append(document.data.getValue("Indication"))
+                            SA.append(document.data.getValue("Side_Affect"))
+
+
+
+                            // Reference to an image file in Cloud Storage
+                            //val storageReference = FirebaseStorage.getInstance()
+
+                            // ImageView in your Activity
+                            val imageView = findViewById<ImageView>(R.id.testImage)
+
+                            // Download directly from StorageReference using Glide
+                            // (See MyAppGlideModule for Loader registration)
+                            Glide.with(this /* context */)
+                                    .load(document.data.getValue("Product_Picture"))
+                                    .into(imageView)
+
+
+                        }
+
+
                         var textViewprName : TextView
                         textViewprName = findViewById(R.id.testName)
                         textViewprName.setText(prName)
