@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.example.myapplication.ProductTempleteinRecyclerView
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recyclerview.*
