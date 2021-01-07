@@ -93,7 +93,11 @@ class MainActivity : AppCompatActivity() {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
             if (result.contents == null) Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
-            else Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+            else {Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+                val intent= Intent(this, retrieveActivity2::class.java)
+                intent.putExtra("Bar_Code_Number",result.contents.toString())
+                startActivity(intent)
+            }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
