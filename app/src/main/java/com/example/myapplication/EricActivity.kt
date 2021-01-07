@@ -31,12 +31,6 @@ class EricActivity: AppCompatActivity() {
             startActivity(Intent(this, retrieveActivity2::class.java))
         }
 
-
-        val showP: Button = findViewById(R.id.showProductView)
-        showP.setOnClickListener {
-            startActivity(Intent(this, retrieveProduct::class.java))
-        }
-
         val search: Button = findViewById(R.id.search)
         search.setOnClickListener {
             startActivity(Intent(this, ericSearchActivity::class.java))

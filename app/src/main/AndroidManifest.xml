@@ -31,7 +31,6 @@
 
         <activity android:name=".EricActivity" />
         <activity android:name=".retrieveActivity2" />
-        <activity android:name=".retrieveProduct" />
         <activity android:name=".ericSearchActivity" />
 
         <activity
