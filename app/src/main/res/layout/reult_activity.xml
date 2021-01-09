@@ -1,126 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:orientation="vertical"
-    tools:layout_editor_absoluteX="29dp">
 
-    <TextView
-        android:id="@+id/textViewArray"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintTop_toBottomOf="@+id/testImage" />
-
-    <ImageView
-        android:id="@+id/testImage"
-        android:layout_width="252dp"
-        android:layout_height="203dp"
-        android:adjustViewBounds="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testName"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/testBarCodeNum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/textViewArray" />
-
-    <TextView
-        android:id="@+id/testPackage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testBarCodeNum" />
-
-    <TextView
-        android:id="@+id/testBrand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testPackage" />
-
-    <TextView
-        android:id="@+id/testManufacture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testBrand" />
-
-    <TextView
-        android:id="@+id/testMainIngredient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testManufacture" />
-
-    <TextView
-        android:id="@+id/testAllIngredient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testMainIngredient" />
-
-    <TextView
-        android:id="@+id/testDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testAllIngredient" />
-
-    <TextView
-        android:id="@+id/testIndication"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testDescription" />
-
-    <TextView
-        android:id="@+id/testSideAffect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/testIndication" />
+        android:layout_height="wrap_content">
 
 
-    <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/testImage"
-        app:layout_constraintEnd_toEndOf="@+id/testName"
-        app:layout_constraintStart_toStartOf="@+id/testName"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/AddToCart"
+            android:layout_width="321dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="24dp"
+            android:text="Add To Cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewArray" />
 
-    <TextView
-        android:id="@+id/testName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/testSideAffect"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/SideEffect"
+            app:layout_constraintTop_toBottomOf="@+id/testManufacture" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/testDescription"
+            android:layout_width="325dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="1dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/instruction"
+            app:layout_constraintTop_toBottomOf="@+id/instruction" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/testImage"
+            app:layout_constraintEnd_toEndOf="@+id/testName"
+            app:layout_constraintHorizontal_bias="0.838"
+            app:layout_constraintStart_toStartOf="@+id/testName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/testMainIngredient"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/NameIngredient"
+            app:layout_constraintTop_toBottomOf="@+id/NameIngredient"
+            app:trimCollapsedText="close"
+            app:trimExpandedText="show"
+            app:trimLength="0"
+            app:trimMode="trimModeLength" />
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/testAllIngredient"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/OtherIngredient"
+            app:layout_constraintTop_toBottomOf="@+id/OtherIngredient"
+            app:trimCollapsedText="close"
+            app:trimExpandedText="show"
+            app:trimLength="0"
+            app:trimMode="trimModeLength" />
+
+        <TextView
+            android:id="@+id/testPackage"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="1dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/PackageName"
+            app:layout_constraintTop_toBottomOf="@+id/Detail" />
+
+        <TextView
+            android:id="@+id/testBarCodeNum"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/testPackage" />
+
+        <TextView
+            android:id="@+id/textViewArray"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/testBarCodeNum" />
+
+        <ImageView
+            android:id="@+id/testImage"
+            android:layout_width="283dp"
+            android:layout_height="245dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testBrand"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/testBrand"
+            android:layout_width="349dp"
+            android:layout_height="29dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.225"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testName" />
+
+        <TextView
+            android:id="@+id/testIndication"
+            android:layout_width="325dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="@+id/Description"
+            app:layout_constraintTop_toBottomOf="@+id/Description" />
+
+        <TextView
+            android:id="@+id/testManufacture"
+            android:layout_width="190dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toEndOf="@+id/NameManufacture"
+            app:layout_constraintTop_toBottomOf="@+id/testAllIngredient" />
+
+        <TextView
+            android:id="@+id/testName"
+            android:layout_width="352dp"
+            android:layout_height="29dp"
+            android:adjustViewBounds="true"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.237"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/NameIngredient"
+            android:layout_width="325dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="Main Ingredient:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/testDescription"
+            app:layout_constraintTop_toBottomOf="@+id/testDescription" />
+
+        <TextView
+            android:id="@+id/OtherIngredient"
+            android:layout_width="325dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="Other Ingredient:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/testMainIngredient"
+            app:layout_constraintTop_toBottomOf="@+id/testMainIngredient" />
+
+        <TextView
+            android:id="@+id/NameManufacture"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="Manufacture:"
+            app:layout_constraintStart_toStartOf="@+id/testAllIngredient"
+            app:layout_constraintTop_toBottomOf="@+id/testAllIngredient" />
+
+        <TextView
+            android:id="@+id/SideEffect"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:text="Side Effects:"
+            app:layout_constraintStart_toStartOf="@+id/NameManufacture"
+            app:layout_constraintTop_toBottomOf="@+id/NameManufacture" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:text="Price:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testImage" />
+
+        <TextView
+            android:id="@+id/PriceN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:text="29.99"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toEndOf="@+id/CND"
+            app:layout_constraintTop_toBottomOf="@+id/testImage" />
+
+        <TextView
+            android:id="@+id/CND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:text="CND$"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toEndOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/testImage" />
+
+        <TextView
+            android:id="@+id/Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Usage:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="instruction"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="@+id/testIndication"
+            app:layout_constraintTop_toBottomOf="@+id/testIndication" />
+
+        <TextView
+            android:id="@+id/Detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Detail:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="@+id/SideEffect"
+            app:layout_constraintTop_toBottomOf="@+id/SideEffect" />
+
+        <TextView
+            android:id="@+id/PackageName"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:text="Package Number:"
+            app:layout_constraintStart_toStartOf="@+id/Detail"
+            app:layout_constraintTop_toBottomOf="@+id/Detail" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:text="Code Number:"
+            app:layout_constraintStart_toStartOf="@+id/PackageName"
+            app:layout_constraintTop_toBottomOf="@+id/PackageName" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
