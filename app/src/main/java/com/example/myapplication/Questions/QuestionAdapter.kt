@@ -1,6 +1,5 @@
 package com.example.myapplication.Questions
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.questions_row.view.*
 
-class QuestionAdapter (val arrayList: ArrayList<Model>,val context: Context) :
+class QuestionAdapter(val arrayList: ArrayList<Model>) :
     RecyclerView.Adapter<QuestionAdapter.ViewHolder>() {
     class ViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
         fun bindItems(model:Model){
@@ -27,17 +26,9 @@ class QuestionAdapter (val arrayList: ArrayList<Model>,val context: Context) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-      holder.bindItems(arrayList[position])
-
+        holder.bindItems(arrayList[position])
         holder.itemView.setOnClickListener{
 
         }
-
-
-
-
-
     }
-
-
 }
