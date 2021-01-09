@@ -91,10 +91,10 @@
             android:id="@+id/testPackage"
             android:layout_width="190dp"
             android:layout_height="30dp"
-            android:layout_marginTop="1dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/border"
             android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintStart_toEndOf="@+id/PackageName"
             app:layout_constraintTop_toBottomOf="@+id/Detail" />
 
@@ -103,9 +103,10 @@
             android:layout_width="190dp"
             android:layout_height="30dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/border"
             android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintStart_toEndOf="@+id/NameCodeNum"
             app:layout_constraintTop_toBottomOf="@+id/testPackage" />
 
         <TextView
@@ -113,9 +114,10 @@
             android:layout_width="190dp"
             android:layout_height="30dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/border"
             android:scaleType="fitCenter"
             android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/testBarCodeNum" />
 
@@ -201,6 +203,7 @@
             android:layout_height="30dp"
             android:adjustViewBounds="true"
             android:text="Manufacture:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/testAllIngredient"
             app:layout_constraintTop_toBottomOf="@+id/testAllIngredient" />
 
@@ -210,6 +213,7 @@
             android:layout_height="30dp"
             android:adjustViewBounds="true"
             android:text="Side Effects:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/NameManufacture"
             app:layout_constraintTop_toBottomOf="@+id/NameManufacture" />
 
@@ -284,15 +288,19 @@
             android:id="@+id/PackageName"
             android:layout_width="135dp"
             android:layout_height="30dp"
+            android:background="@drawable/border"
             android:text="Package Number:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintStart_toStartOf="@+id/Detail"
             app:layout_constraintTop_toBottomOf="@+id/Detail" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/NameCodeNum"
             android:layout_width="135dp"
             android:layout_height="30dp"
+            android:background="@drawable/border"
             android:text="Code Number:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             app:layout_constraintStart_toStartOf="@+id/PackageName"
             app:layout_constraintTop_toBottomOf="@+id/PackageName" />
 
@@ -300,9 +308,11 @@
             android:id="@+id/textView7"
             android:layout_width="135dp"
             android:layout_height="30dp"
+            android:background="@drawable/border"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintStart_toStartOf="@+id/NameCodeNum"
+            app:layout_constraintTop_toBottomOf="@+id/NameCodeNum" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
