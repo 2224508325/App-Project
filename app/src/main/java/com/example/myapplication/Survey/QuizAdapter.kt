@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 
 
-class QuizAdapter(val context: Context,val Head: List<Quiz>) :
+class QuizAdapter(val context: Context,val Qlist: List<Quiz>) :
     RecyclerView.Adapter<QuizAdapter.QuizViewHolder>() {
 
 
@@ -22,22 +22,21 @@ class QuizAdapter(val context: Context,val Head: List<Quiz>) :
     }
 
     override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
-        holder.textViewTitle.text = Head[position].title
+        holder.textViewTitle.text = Qlist[position].title
 
         holder.itemView.setOnClickListener{
-            Toast.makeText(context, Head[position].title,Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, Qlist[position].title,Toast.LENGTH_SHORT).show()
             val intent = Intent(context,QuestionActivity::class.java)
-            intent.putExtra("PAIN", Head[position].title)
+            intent.putExtra("PAIN", Qlist[position].title)
             context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return Head.size
+        return Qlist.size
     }
     inner class QuizViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var textViewTitle:TextView = itemView.findViewById(R.id.quizTitle)
         var cardContainer:CardView = itemView.findViewById(R.id.cardContainer)
     }
-
 }

@@ -16,7 +16,7 @@ import org.w3c.dom.Text
 class OptionAdapter(val context: Context,val question: Question) :
     RecyclerView.Adapter<OptionAdapter.OptionViewHolder>() {
 
-    private var options: List<String> = listOf(question.option1,question.option2,question.option3,question.option4,question.option5)
+    private var options: ArrayList<String> = arrayListOf(question.option1,question.option2,question.option3,question.option4,question.option5)
 
     inner class OptionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var optionView = itemView.findViewById<TextView>(R.id.quiz_option)
@@ -46,6 +46,5 @@ class OptionAdapter(val context: Context,val question: Question) :
     override fun getItemCount(): Int {
         return options.size
     }
-
 
 }
