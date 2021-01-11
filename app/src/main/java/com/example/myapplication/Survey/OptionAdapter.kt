@@ -31,6 +31,7 @@ class OptionAdapter(val context: Context,val question: Question) :
         holder.optionView.text = options[position]
         holder.itemView.setOnClickListener{
 
+            Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
         }
     }
 
