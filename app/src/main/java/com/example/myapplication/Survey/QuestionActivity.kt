@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_question.*
+import org.w3c.dom.Text
 
 class QuestionActivity : AppCompatActivity() {
 
@@ -38,10 +41,11 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     private fun setUpFirestore() {
-        val head: List<Quiz>
-        val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-            firestore.collection("Head").whereEqualTo("title", "Red Eyes").get().addOnSuccessListener {
+        val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+        var pain:String? = intent.getStringExtra("PAIN")
+
+            firestore.collection("Head").whereEqualTo("title", pain).get().addOnSuccessListener {
                 if(it != null && !it.isEmpty){
                     quizzes = it.toObjects(Quiz::class.java)
                     questions = quizzes!![0].questions

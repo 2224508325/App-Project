@@ -27,7 +27,7 @@ class QuizAdapter(val context: Context,val Head: List<Quiz>) :
         holder.itemView.setOnClickListener{
             Toast.makeText(context, Head[position].title,Toast.LENGTH_SHORT).show()
             val intent = Intent(context,QuestionActivity::class.java)
-            intent.putExtra("DATE", Head[position].title)
+            intent.putExtra("PAIN", Head[position].title)
             context.startActivity(intent)
         }
     }
