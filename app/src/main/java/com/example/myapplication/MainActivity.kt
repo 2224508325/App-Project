@@ -9,7 +9,10 @@ import android.widget.*
 
 
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.Andy.Recyclerview
+import com.example.myapplication.Survey.Quiz
+import com.example.myapplication.Survey.QuizAdapter
 import com.example.myapplication.fragments.DoctorFragment
 import com.example.myapplication.fragments.ProductFragmet
 import com.example.myapplication.fragments.SymptomFragment
@@ -17,10 +20,12 @@ import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_main.*
 
 
+
 class MainActivity : AppCompatActivity() {
 
     //list view for search
-    private lateinit var adapter: ArrayAdapter<*>
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +54,9 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
+
 
     //Top Search with Strings
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -88,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         }
     //End Bottom Nav
 
-
+    //bar code
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
@@ -102,6 +110,7 @@ class MainActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+    //end of bar code
 
 
     }

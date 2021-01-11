@@ -61,13 +61,9 @@ class Recyclerview : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
-
-
-
         menuInflater.inflate(R.menu.nav_search, menu)
 
         val menuItem = menu!!.findItem(R.id.SearchButton)
-
 
         if(menuItem != null){
             val searchView = menuItem.actionView as SearchView

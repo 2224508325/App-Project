@@ -4,18 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
-import com.example.myapplication.EricActivity
-import com.example.myapplication.Questions.QuestionAdapter
-import com.example.myapplication.Questions.Questions
-import com.example.myapplication.R
 
-import com.example.myapplication.retrieveActivity2
-import kotlinx.android.synthetic.main.fragment_doctor.*
+import com.example.myapplication.R
+import com.example.myapplication.Survey.MainHeadPainTypes
+import com.example.myapplication.Survey.Quiz
+
 import kotlinx.android.synthetic.main.fragment_symptom.*
 
 class SymptomFragment : Fragment() {
@@ -31,7 +26,7 @@ class SymptomFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         belly.setOnClickListener {
-            val intent = Intent (activity, Questions::class.java)
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
             startActivity(intent)
         }
         super.onViewCreated(view, savedInstanceState)
