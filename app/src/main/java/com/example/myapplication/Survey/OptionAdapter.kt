@@ -30,8 +30,16 @@ class OptionAdapter(val context: Context,val question: Question) :
     override fun onBindViewHolder(holder: OptionViewHolder, position: Int) {
         holder.optionView.text = options[position]
         holder.itemView.setOnClickListener{
-
+            question.userAnswer = options[position]
+            notifyDataSetChanged()
             Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
+        }
+        if(question.userAnswer == options[position]){
+            holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
+        }
+        else{
+            holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
+
         }
     }
 
