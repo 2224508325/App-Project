@@ -13,7 +13,6 @@
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".Survey.QuestionActivity"></activity>
         <activity android:name=".Survey.MainHeadPainTypes" />
-        <activity android:name=".Survey.HeadPainTypesMain" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -35,9 +34,8 @@
 
         <activity android:name=".EricActivity" />
         <activity android:name=".retrieveActivity2" />
-        <activity android:name=".ericSearchActivity" />
         <activity
-            android:name=".Andy.Recyclerview"
+            android:name=".ericSearchActivity"
             android:label="@string/title_activity_recyclerview"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
     </application>

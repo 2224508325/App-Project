@@ -11,7 +11,7 @@ import android.widget.*
 
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.myapplication.Andy.Recyclerview
+
 import com.example.myapplication.Survey.Quiz
 import com.example.myapplication.Survey.QuizAdapter
 import com.example.myapplication.fragments.DoctorFragment

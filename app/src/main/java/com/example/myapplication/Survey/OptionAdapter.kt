@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.Andy.Recyclerview
+
 import com.example.myapplication.R
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.option_item.view.*
