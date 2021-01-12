@@ -42,9 +42,13 @@ class OptionAdapter(val context: Context,val question: Question) :
         }
 
 
-        if (question.userAnswer == options[position]) {
+        if (question.userAnswer == options[position] && options[position] != " ") {
+            Log.d("positionname",options[position])
             holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
-        } else {
+        }else if (options[position] == " "){
+            holder.itemView.setBackgroundResource(R.drawable.emptyviewfornotselected)
+        }
+        else {
             holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
         }
 

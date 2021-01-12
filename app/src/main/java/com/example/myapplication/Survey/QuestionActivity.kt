@@ -49,9 +49,8 @@ class QuestionActivity : AppCompatActivity() {
 
         }
         btnNext.setOnClickListener{
-                if(OptionAdapter.ischoosen.intchoosenposition == true) {
+                if(OptionAdapter.ischoosen.intchoosenposition) {
                     index++
-
                     temp.add(OptionAdapter.recordposition.resultposition)
                     inttemp++
                     bindViews()
