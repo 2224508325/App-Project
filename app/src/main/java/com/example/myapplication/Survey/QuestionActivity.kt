@@ -49,6 +49,7 @@ class QuestionActivity : AppCompatActivity() {
         val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
         var pain:String? = intent.getStringExtra("PAIN")
 
+        Log.d("last",SymptomFragment.myPainType.stuffDone)
 
             firestore.collection("Survey")
                 .document("8OlHlFAdEH1hs0RTOV8L").collection(SymptomFragment.myPainType.stuffDone)

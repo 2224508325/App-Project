@@ -2,6 +2,7 @@ package com.example.myapplication.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,33 +30,50 @@ class SymptomFragment : Fragment() {
         head.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "Head")
+            myPainType.stuffDone = "Head"
             startActivity(intent)
         }
-        chest.setOnClickListener {
+        upperbody.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "UpperBody")
+            myPainType.stuffDone = "UpperBody"
             startActivity(intent)
         }
-        belly.setOnClickListener {
+        abdomen.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "Abdomen")
+            myPainType.stuffDone = "Abdomen"
+            startActivity(intent)
+        }
+        pelvic.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Pelvic")
+            myPainType.stuffDone = "Pelvic"
             startActivity(intent)
         }
         feet.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "Limbs")
+            myPainType.stuffDone = "Limbs"
             startActivity(intent)
         }
         left_hand.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "Limbs")
+            myPainType.stuffDone = "Limbs"
             startActivity(intent)
         }
         right_hand.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "Limbs")
+            myPainType.stuffDone = "Limbs"
             startActivity(intent)
         }
         super.onViewCreated(view, savedInstanceState)
+    }
+    class myPainType{
+        companion object{
+        var stuffDone = " "
+        }
     }
 }
