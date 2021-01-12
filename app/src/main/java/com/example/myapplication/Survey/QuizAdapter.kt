@@ -2,6 +2,7 @@ package com.example.myapplication.Survey
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,10 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.retrieveActivity2
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
+import org.w3c.dom.Text
 
 
 class QuizAdapter(val context: Context,val Qlist: List<Quiz>) :
@@ -36,7 +41,10 @@ class QuizAdapter(val context: Context,val Qlist: List<Quiz>) :
         return Qlist.size
     }
     inner class QuizViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
         var textViewTitle:TextView = itemView.findViewById(R.id.quizTitle)
         var cardContainer:CardView = itemView.findViewById(R.id.cardContainer)
+
+
     }
 }

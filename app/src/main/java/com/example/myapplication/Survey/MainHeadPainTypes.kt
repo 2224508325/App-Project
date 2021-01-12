@@ -1,9 +1,13 @@
 package com.example.myapplication.Survey
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.annotation.MainThread
+import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,21 +26,20 @@ class MainHeadPainTypes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_head_pain_types)
 
-        setUpViews()
-    }
-
-
-
-    private fun setUpViews() {
         setUpFireStore()
         setUpRecyclerView()
-
     }
+
 
     private fun setUpFireStore() {
 
         firestore = FirebaseFirestore.getInstance()
         var BodyPart:String? = intent.getStringExtra("BODYPART")
+
+        PAINTYPE.text = BodyPart.toString()
+
+        Log.d("asas",BodyPart.toString())
+
 
         Toast.makeText(this,BodyPart.toString(),Toast.LENGTH_SHORT).show()
         val collectionReference = firestore.collection("Survey").document("8OlHlFAdEH1hs0RTOV8L").collection(BodyPart.toString())
@@ -51,6 +54,7 @@ class MainHeadPainTypes : AppCompatActivity() {
             adapter.notifyDataSetChanged()
 
         }
+
     }
 
     private fun setUpRecyclerView() {
@@ -59,4 +63,6 @@ class MainHeadPainTypes : AppCompatActivity() {
         quizRecyclerView.adapter = adapter
     }
 
+
 }
+
