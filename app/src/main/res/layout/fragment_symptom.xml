@@ -24,18 +24,18 @@
             android:src="@drawable/upperbody"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.362" />
+            app:layout_constraintVertical_bias="0.392" />
 
         <ImageButton
             android:id="@+id/feet"
-            android:layout_width="128dp"
-            android:layout_height="258dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="91dp"
+            android:layout_width="129dp"
+            android:layout_height="254dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="66dp"
             android:layout_marginEnd="13dp"
             android:layout_marginRight="13dp"
             android:adjustViewBounds="true"
@@ -60,6 +60,7 @@
             android:src="@drawable/head"
             app:layout_constraintBottom_toTopOf="@+id/upperbody"
             app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/upperbody" />
 
         <ImageButton
@@ -98,35 +99,33 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toTopOf="@+id/head"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.704" />
 
         <ImageButton
             android:id="@+id/pelvic"
-            android:layout_width="109dp"
-            android:layout_height="138dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_width="110dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginRight="82dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/pelvic"
-            app:layout_constraintEnd_toEndOf="@+id/upperbody"
-            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintEnd_toEndOf="@+id/right_hand"
+            app:layout_constraintStart_toStartOf="@+id/left_hand"
             app:layout_constraintTop_toTopOf="@+id/abdomen" />
 
         <ImageButton
             android:id="@+id/abdomen"
-            android:layout_width="95dp"
-            android:layout_height="108dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginLeft="26dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_width="96dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="95dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
@@ -134,6 +133,79 @@
             app:layout_constraintEnd_toEndOf="@+id/upperbody"
             app:layout_constraintStart_toStartOf="@+id/upperbody"
             app:layout_constraintTop_toTopOf="@+id/upperbody" />
+
+        <TextView
+            android:id="@+id/TextHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Head"
+            app:layout_constraintBottom_toTopOf="@+id/upperbody"
+            app:layout_constraintEnd_toEndOf="@+id/head"
+            app:layout_constraintStart_toStartOf="@+id/head"
+            app:layout_constraintTop_toTopOf="@+id/head" />
+
+        <TextView
+            android:id="@+id/TextUpper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upper Body"
+            app:layout_constraintBottom_toTopOf="@+id/abdomen"
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/upperbody" />
+
+        <TextView
+            android:id="@+id/TextAbdomen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abdomen"
+            app:layout_constraintBottom_toBottomOf="@+id/upperbody"
+            app:layout_constraintEnd_toStartOf="@+id/right_hand"
+            app:layout_constraintStart_toStartOf="@+id/abdomen"
+            app:layout_constraintTop_toTopOf="@+id/abdomen" />
+
+        <TextView
+            android:id="@+id/TextPelvic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pelvic"
+            app:layout_constraintBottom_toTopOf="@+id/feet"
+            app:layout_constraintEnd_toEndOf="@+id/pelvic"
+            app:layout_constraintStart_toStartOf="@+id/pelvic"
+            app:layout_constraintTop_toTopOf="@+id/pelvic" />
+
+        <TextView
+            android:id="@+id/limbR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="129dp"
+            android:text="Upper Limbs"
+            app:layout_constraintStart_toStartOf="@+id/right_hand"
+            app:layout_constraintTop_toTopOf="@+id/right_hand" />
+
+        <TextView
+            android:id="@+id/LimbL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginRight="72dp"
+            android:text="Upper Limbs"
+            app:layout_constraintEnd_toEndOf="@+id/left_hand"
+            app:layout_constraintTop_toTopOf="@+id/left_hand" />
+
+        <TextView
+            android:id="@+id/Limbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="40dp"
+            android:text="Lower Limbs"
+            app:layout_constraintStart_toStartOf="@+id/feet"
+            app:layout_constraintTop_toTopOf="@+id/feet" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
