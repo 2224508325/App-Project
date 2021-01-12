@@ -270,7 +270,7 @@
             android:id="@+id/instruction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="instruction"
+            android:text="instruction:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintStart_toStartOf="@+id/testIndication"
             app:layout_constraintTop_toBottomOf="@+id/testIndication" />

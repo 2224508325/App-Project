@@ -9,7 +9,6 @@ import android.view.ViewGroup
 
 import com.example.myapplication.R
 import com.example.myapplication.Survey.MainHeadPainTypes
-import com.example.myapplication.Survey.Quiz
 
 import kotlinx.android.synthetic.main.fragment_symptom.*
 
@@ -31,7 +30,7 @@ class SymptomFragment : Fragment() {
             intent.putExtra("BODYPART", "Head")
             startActivity(intent)
         }
-        chest.setOnClickListener {
+        upperbody.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
             intent.putExtra("BODYPART", "UpperBody")
             startActivity(intent)

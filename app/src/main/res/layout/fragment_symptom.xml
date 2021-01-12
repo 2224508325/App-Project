@@ -15,30 +15,13 @@
 
 
         <ImageButton
-            android:id="@+id/belly"
-            android:layout_width="109dp"
-            android:layout_height="123dp"
-            android:layout_marginStart="91dp"
-            android:layout_marginLeft="91dp"
-            android:layout_marginTop="109dp"
-            android:layout_marginEnd="81dp"
-            android:layout_marginRight="81dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/belly"
-            app:layout_constraintEnd_toEndOf="@+id/right_hand"
-            app:layout_constraintStart_toStartOf="@+id/left_hand"
-            app:layout_constraintTop_toTopOf="@+id/chest" />
-
-        <ImageButton
-            android:id="@+id/chest"
+            android:id="@+id/upperbody"
             android:layout_width="146dp"
             android:layout_height="129dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/chest"
+            android:src="@drawable/upperbody"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -48,52 +31,50 @@
 
         <ImageButton
             android:id="@+id/feet"
-            android:layout_width="150dp"
-            android:layout_height="237dp"
-            android:layout_marginStart="69dp"
-            android:layout_marginLeft="69dp"
-            android:layout_marginTop="101dp"
-            android:layout_marginEnd="62dp"
-            android:layout_marginRight="62dp"
+            android:layout_width="128dp"
+            android:layout_height="258dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/feet"
-            app:layout_constraintEnd_toEndOf="@+id/right_hand"
-            app:layout_constraintStart_toStartOf="@+id/left_hand"
-            app:layout_constraintTop_toTopOf="@+id/belly" />
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/pelvic" />
 
         <ImageButton
             android:id="@+id/head"
-            android:layout_width="93dp"
-            android:layout_height="91dp"
-            android:layout_marginStart="102dp"
-            android:layout_marginLeft="102dp"
-            android:layout_marginEnd="86dp"
-            android:layout_marginRight="86dp"
+            android:layout_width="83dp"
+            android:layout_height="83dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="31dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
             android:src="@drawable/head"
-            app:layout_constraintBottom_toTopOf="@+id/chest"
-            app:layout_constraintEnd_toEndOf="@+id/right_hand"
-            app:layout_constraintEnd_toStartOf="@+id/right_hand"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/left_hand" />
+            app:layout_constraintBottom_toTopOf="@+id/upperbody"
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintStart_toStartOf="@+id/upperbody" />
 
         <ImageButton
             android:id="@+id/left_hand"
-            android:layout_width="114dp"
-            android:layout_height="211dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="105dp"
-            android:layout_marginRight="105dp"
+            android:layout_width="112dp"
+            android:layout_height="207dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginRight="108dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/left_hand"
-            app:layout_constraintEnd_toEndOf="@+id/chest"
-            app:layout_constraintTop_toTopOf="@+id/chest" />
+            android:src="@drawable/lefthand"
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/upperbody" />
 
         <ImageButton
             android:id="@+id/right_hand"
@@ -105,9 +86,9 @@
             android:adjustViewBounds="true"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/right_hand"
-            app:layout_constraintStart_toStartOf="@+id/chest"
-            app:layout_constraintTop_toTopOf="@+id/chest" />
+            android:src="@drawable/righthand"
+            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/upperbody" />
 
         <TextView
             android:id="@+id/textView"
@@ -119,6 +100,40 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/pelvic"
+            android:layout_width="109dp"
+            android:layout_height="138dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pelvic"
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/abdomen" />
+
+        <ImageButton
+            android:id="@+id/abdomen"
+            android:layout_width="95dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/abdomen"
+            app:layout_constraintEnd_toEndOf="@+id/upperbody"
+            app:layout_constraintStart_toStartOf="@+id/upperbody"
+            app:layout_constraintTop_toTopOf="@+id/upperbody" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
