@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.google.firebase.firestore.FirebaseFirestore
@@ -44,15 +45,16 @@ class QuestionActivity : AppCompatActivity() {
 
         val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
         var pain:String? = intent.getStringExtra("PAIN")
+        var BodyPart:String? = intent.getStringExtra("BODYPART")
+        Log.d("body",BodyPart.toString())
 
-            firestore.collection("Head").whereEqualTo("title", pain).get().addOnSuccessListener {
+            firestore.collection("Survey").document("8OlHlFAdEH1hs0RTOV8L").collection(BodyPart.toString())
+                    .whereEqualTo("title", pain).get().addOnSuccessListener {
                 if(it != null && !it.isEmpty){
                     quizzes = it.toObjects(Quiz::class.java)
                     questions = quizzes!![0].questions
                     bindViews()
-
             }
-
         }
     }
 

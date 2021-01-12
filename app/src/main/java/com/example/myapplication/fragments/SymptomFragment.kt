@@ -21,12 +21,39 @@ class SymptomFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_symptom, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var BodyPart = " "
+
+        head.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Head")
+            startActivity(intent)
+        }
+        chest.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "UpperBody")
+            startActivity(intent)
+        }
         belly.setOnClickListener {
             val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Abdomen")
+            startActivity(intent)
+        }
+        feet.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Limbs")
+            startActivity(intent)
+        }
+        left_hand.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Limbs")
+            startActivity(intent)
+        }
+        right_hand.setOnClickListener {
+            val intent = Intent (activity, MainHeadPainTypes::class.java)
+            intent.putExtra("BODYPART", "Limbs")
             startActivity(intent)
         }
         super.onViewCreated(view, savedInstanceState)

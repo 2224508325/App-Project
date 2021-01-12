@@ -36,7 +36,10 @@ class MainHeadPainTypes : AppCompatActivity() {
     private fun setUpFireStore() {
 
         firestore = FirebaseFirestore.getInstance()
-        val collectionReference = firestore.collection("Head")
+        var BodyPart:String? = intent.getStringExtra("BODYPART")
+
+        Toast.makeText(this,BodyPart.toString(),Toast.LENGTH_SHORT).show()
+        val collectionReference = firestore.collection("Survey").document("8OlHlFAdEH1hs0RTOV8L").collection(BodyPart.toString())
         collectionReference.addSnapshotListener{value,error->
              if(value == null || error != null){
                  Toast.makeText(this,"Error fetching data",Toast.LENGTH_SHORT).show()
