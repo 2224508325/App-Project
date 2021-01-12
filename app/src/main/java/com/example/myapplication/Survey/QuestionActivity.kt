@@ -48,7 +48,7 @@ class QuestionActivity : AppCompatActivity() {
         var BodyPart:String? = intent.getStringExtra("BODYPART")
         Log.d("body",BodyPart.toString())
 
-            firestore.collection("Survey").document("8OlHlFAdEH1hs0RTOV8L").collection(BodyPart.toString())
+            firestore.collection("Survey").document("8OlHlFAdEH1hs0RTOV8L").collection("UpperBody")
                     .whereEqualTo("title", pain).get().addOnSuccessListener {
                 if(it != null && !it.isEmpty){
                     quizzes = it.toObjects(Quiz::class.java)
