@@ -24,6 +24,7 @@ class OptionAdapter(val context: Context,val question: Question) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionViewHolder {
+
         val view = LayoutInflater.from(context).inflate(R.layout.option_item,parent,false)
         return OptionViewHolder(view)
     }
@@ -39,6 +40,7 @@ class OptionAdapter(val context: Context,val question: Question) :
 
             Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
         }
+
 
         if(question.userAnswer == options[position]){
             holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
@@ -70,5 +72,4 @@ class OptionAdapter(val context: Context,val question: Question) :
             var resultarray = arrayListOf<String>()
         }
     }
-
 }

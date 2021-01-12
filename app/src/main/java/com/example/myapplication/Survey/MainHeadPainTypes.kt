@@ -52,9 +52,7 @@ class MainHeadPainTypes : AppCompatActivity() {
             quizList.clear()
             quizList.addAll(value.toObjects(Quiz::class.java))
             adapter.notifyDataSetChanged()
-
         }
-
     }
 
     private fun setUpRecyclerView() {
@@ -62,7 +60,4 @@ class MainHeadPainTypes : AppCompatActivity() {
         quizRecyclerView.layoutManager = GridLayoutManager(this,2)
         quizRecyclerView.adapter = adapter
     }
-
-
 }
-

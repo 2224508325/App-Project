@@ -44,6 +44,5 @@ class QuizAdapter(val context: Context,val Qlist: List<Quiz>) :
         var textViewTitle:TextView = itemView.findViewById(R.id.quizTitle)
         var cardContainer:CardView = itemView.findViewById(R.id.cardContainer)
 
-
     }
 }

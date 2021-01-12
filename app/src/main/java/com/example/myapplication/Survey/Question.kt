@@ -7,5 +7,5 @@ data class Question (
     var option3 : String = " ",
     var option4 : String = " ",
     var option5 : String = " ",
-    var userAnswer:String = " "
+    var userAnswer:String = ""
 )

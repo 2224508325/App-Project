@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.fragments.SymptomFragment
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_ingredient_popup.*
 import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
 import kotlinx.android.synthetic.main.activity_question.*
 import org.w3c.dom.Text
@@ -59,11 +60,14 @@ class QuestionActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener{
 
             temp.add(OptionAdapter.recordposition.resultposition)
+
             Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
-            OptionAdapter.recordresult.resultarray.clear()
+
 
             intent = Intent(this,IngredientPopup::class.java)
+            intent.putExtra("ARRAYLIST", OptionAdapter.recordresult.resultarray.toString())
             startActivity(intent)
+            OptionAdapter.recordresult.resultarray.clear()
             finish()
         }
     }
