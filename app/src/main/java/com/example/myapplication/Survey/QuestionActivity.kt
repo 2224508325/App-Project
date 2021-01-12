@@ -86,6 +86,7 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
+
     private fun bindViews() {
         btnPrevious.visibility = View.GONE
         btnSubmit.visibility = View.GONE
