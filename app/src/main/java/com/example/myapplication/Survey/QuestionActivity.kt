@@ -32,7 +32,7 @@ class QuestionActivity : AppCompatActivity() {
 
     private fun setUpEventListener() {
         var inttemp = OptionAdapter.recordintofposition.intposition
-        var temp = OptionAdapter.recordresult.resultarray
+        val temp = OptionAdapter.recordresult.resultarray
 
         btnPrevious.setOnClickListener{
 
@@ -57,7 +57,7 @@ class QuestionActivity : AppCompatActivity() {
             Log.d("FinalQuiz", inttemp.toString())
         }
         btnSubmit.setOnClickListener{
-            var temp = OptionAdapter.recordresult.resultarray
+
             temp.add(OptionAdapter.recordposition.resultposition)
             Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
             OptionAdapter.recordresult.resultarray.clear()
@@ -71,7 +71,7 @@ class QuestionActivity : AppCompatActivity() {
     private fun setUpFirestore() {
 
         val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-        var pain:String? = intent.getStringExtra("PAIN")
+        val pain:String? = intent.getStringExtra("PAIN")
 
         Log.d("last",SymptomFragment.myPainType.stuffDone)
 
