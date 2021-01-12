@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         when(itemview){
             R.id.SearchButton -> {
-                val intent = Intent(this, Recyclerview::class.java)
+                val intent = Intent(this, ericSearchActivity::class.java)
                 startActivity(intent)
             }
             R.id.BarcodeScan ->{
