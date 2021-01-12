@@ -31,23 +31,28 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     override fun onBindViewHolder(holder: OptionViewHolder, position: Int) {
         holder.optionView.text = options[position]
+
+
         holder.itemView.setOnClickListener{
+
+            ischoosen.intchoosenposition = true
             question.userAnswer = options[position]
             notifyDataSetChanged()
             recordposition.resultposition = options[position]
-
-            Log.d("position111", recordintofposition.intposition.toString())
-
-            Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
         }
 
 
-        if(question.userAnswer == options[position]){
+        if (question.userAnswer == options[position]) {
             holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
-        }
-        else{
+        } else {
             holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
+        }
 
+    }
+
+    class ischoosen{
+        companion object{
+            var intchoosenposition : Boolean = false
         }
     }
 

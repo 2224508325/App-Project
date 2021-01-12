@@ -49,14 +49,21 @@ class QuestionActivity : AppCompatActivity() {
 
         }
         btnNext.setOnClickListener{
-            index++
+                if(OptionAdapter.ischoosen.intchoosenposition == true) {
+                    index++
 
-            temp.add(OptionAdapter.recordposition.resultposition)
-            inttemp ++
-            bindViews()
-            Log.d("FinalQuiz",temp.toString())
-            Log.d("FinalQuiz", inttemp.toString())
+                    temp.add(OptionAdapter.recordposition.resultposition)
+                    inttemp++
+                    bindViews()
+                    Log.d("FinalQuiz", temp.toString())
+                    Log.d("FinalQuiz", inttemp.toString())
+                } else{
+                Toast.makeText(this,"Please make a selection", Toast.LENGTH_SHORT).show()
+                }
+            OptionAdapter.ischoosen.intchoosenposition = false
         }
+
+
         btnSubmit.setOnClickListener{
 
             temp.add(OptionAdapter.recordposition.resultposition)
