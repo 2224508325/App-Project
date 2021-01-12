@@ -65,7 +65,6 @@ class QuestionActivity : AppCompatActivity() {
             intent = Intent(this,IngredientPopup::class.java)
             startActivity(intent)
             finish()
-
         }
     }
 
