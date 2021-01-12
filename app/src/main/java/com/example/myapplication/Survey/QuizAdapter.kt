@@ -30,7 +30,6 @@ class QuizAdapter(val context: Context,val Qlist: List<Quiz>) :
         holder.textViewTitle.text = Qlist[position].title
 
         holder.itemView.setOnClickListener{
-            Toast.makeText(context, Qlist[position].title,Toast.LENGTH_SHORT).show()
             val intent = Intent(context,QuestionActivity::class.java)
             intent.putExtra("PAIN", Qlist[position].title)
             context.startActivity(intent)

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Survey.QuestionActivity"></activity>
+        <activity android:name=".Survey.IngredientPopup"></activity>
+        <activity android:name=".Survey.QuestionActivity" />
         <activity android:name=".Survey.MainHeadPainTypes" />
         <activity
             android:name=".SplashActivity"

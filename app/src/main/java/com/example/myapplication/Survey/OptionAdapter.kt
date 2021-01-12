@@ -1,6 +1,7 @@
 package com.example.myapplication.Survey
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,8 +33,13 @@ class OptionAdapter(val context: Context,val question: Question) :
         holder.itemView.setOnClickListener{
             question.userAnswer = options[position]
             notifyDataSetChanged()
+            recordposition.resultposition = options[position]
+
+            Log.d("position111", recordintofposition.intposition.toString())
+
             Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
         }
+
         if(question.userAnswer == options[position]){
             holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
         }
@@ -45,6 +51,24 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     override fun getItemCount(): Int {
         return options.size
+    }
+
+    class recordintofposition{
+        companion object{
+            var intposition = 0
+        }
+    }
+
+    class recordposition{
+        companion object{
+            var resultposition = " "
+        }
+    }
+
+    class recordresult{
+        companion object{
+            var resultarray = arrayListOf<String>()
+        }
     }
 
 }

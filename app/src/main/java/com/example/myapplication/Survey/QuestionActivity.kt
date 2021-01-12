@@ -25,22 +25,47 @@ class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
-        val txt : String? = intent.getStringExtra("BODY")
         setUpFirestore()
         setUpEventListener()
+        OptionAdapter.recordresult.resultarray.clear()
     }
 
     private fun setUpEventListener() {
+        var inttemp = OptionAdapter.recordintofposition.intposition
+        var temp = OptionAdapter.recordresult.resultarray
+
         btnPrevious.setOnClickListener{
+
+
+            inttemp --
+            temp.removeAt(inttemp)
             index--
+            val well = index
             bindViews()
+            Log.d("FinalQuiz",temp.toString())
+            Log.d("FinalQuiz", inttemp.toString())
+            Log.d("FinalQuiz", well.toString())
+
         }
         btnNext.setOnClickListener{
             index++
+
+            temp.add(OptionAdapter.recordposition.resultposition)
+            inttemp ++
             bindViews()
+            Log.d("FinalQuiz",temp.toString())
+            Log.d("FinalQuiz", inttemp.toString())
         }
         btnSubmit.setOnClickListener{
-            Log.d("FinalQuiz",questions.toString())
+            var temp = OptionAdapter.recordresult.resultarray
+            temp.add(OptionAdapter.recordposition.resultposition)
+            Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
+            OptionAdapter.recordresult.resultarray.clear()
+
+            intent = Intent(this,IngredientPopup::class.java)
+            startActivity(intent)
+            finish()
+
         }
     }
 
