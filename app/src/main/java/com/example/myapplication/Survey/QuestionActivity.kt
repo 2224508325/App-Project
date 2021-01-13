@@ -49,9 +49,12 @@ class QuestionActivity : AppCompatActivity() {
 
 
         btnPrevious.setOnClickListener{
+
+            index--
+            OptionAdapter.recordposition.resultposition = inttemp
             inttemp --
             temp.removeAt(inttemp)
-            index--
+
             val well = index
             bindViews()
             Log.d("FinalQuiz",temp.toString())
@@ -72,7 +75,6 @@ class QuestionActivity : AppCompatActivity() {
 
                         Log.d("FinalQuiz", inttemp.toString())
                     } else {
-
                         temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
                         inttemp++
                         bindViews()

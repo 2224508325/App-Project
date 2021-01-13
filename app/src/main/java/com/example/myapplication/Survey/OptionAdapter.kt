@@ -55,9 +55,7 @@ class OptionAdapter(val context: Context,val question: Question) :
                 notifyDataSetChanged()
                 recordposition.resultposition = position
             }
-
             if (question.userAnswer == options[position] && options[position] != " ") {
-                Log.d("positionname", options[position])
                 holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
             } else if (options[position] == " ") {
                 holder.itemView.setBackgroundResource(R.drawable.emptyviewfornotselected)
@@ -68,9 +66,7 @@ class OptionAdapter(val context: Context,val question: Question) :
 
             holder.ratingView.setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
                 ratingvalue.ratingvalue = rating.toInt()
-                if (ratingvalue.ratingvalue != 0){
-                    haschoosenratingornot.yesno = true
-                }
+                haschoosenratingornot.yesno = ratingvalue.ratingvalue != 0
             }
         }
     }
