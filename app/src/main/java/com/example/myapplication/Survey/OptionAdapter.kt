@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.option_item.view.*
+import kotlinx.android.synthetic.main.rating.*
 import org.w3c.dom.Text
 
 
@@ -64,10 +65,13 @@ class OptionAdapter(val context: Context,val question: Question) :
                 holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
             }
         }else{
-            Log.d("rating12345",getItemViewType(position).toString())
-            //ratingvalue.ratingvalue = holder.ratingView.rating.toInt()
-            Log.d("rating12345",holder.ratingView.rating.toString())
 
+            holder.ratingView.setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
+                ratingvalue.ratingvalue = rating.toInt()
+                if (ratingvalue.ratingvalue != 0){
+                    haschoosenratingornot.yesno = true
+                }
+            }
         }
     }
 
@@ -82,10 +86,10 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     override fun getItemCount(): Int {
         if(rating =="false") {
-            ratingornot.rating = false
+            Ratingornot.rating = false
             return options.size
         } else{
-            ratingornot.rating = true
+            Ratingornot.rating = true
             return singleoption.size
         }
     }
@@ -120,7 +124,7 @@ class OptionAdapter(val context: Context,val question: Question) :
             var ratingvalue = 0
         }
     }
-    class ratingornot{
+    class Ratingornot{
         companion object{
             var rating = false
         }

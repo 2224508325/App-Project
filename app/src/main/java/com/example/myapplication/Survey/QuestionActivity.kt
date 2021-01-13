@@ -11,6 +11,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.fragments.SymptomFragment
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_ingredient_popup.*
 import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
 import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.rating.*
-import org.w3c.dom.Text
+
 
 class QuestionActivity : AppCompatActivity() {
 
@@ -26,8 +27,7 @@ class QuestionActivity : AppCompatActivity() {
     var questions:MutableMap<String,Question>? = null
     var individualquestion: MutableList<Question>? = null
     var rating: String = ""
-    var index = 1
-
+    private var index = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,10 +37,14 @@ class QuestionActivity : AppCompatActivity() {
         setUpEventListener()
         OptionAdapter.recordresult.resultarray.clear()
 
-        Log.d("123321", OptionAdapter.ratingornot.rating.toString())
+        Log.d("123321", OptionAdapter.Ratingornot.rating.toString())
     }
     private var inttemp = OptionAdapter.recordintofposition.intposition
     private var temp = OptionAdapter.recordresult.resultarray
+
+
+
+
     private fun setUpEventListener() {
 
 
@@ -57,28 +61,24 @@ class QuestionActivity : AppCompatActivity() {
 
         btnNext.setOnClickListener{
 
-/*            var whatisthis = findViewById<RatingBar>(R.id.ratingBar123)
-            var ratie = whatisthis.rating
-            Log.d("ratie",ratie.toString())
-
-            // giving rating of number*/
-
                 if(OptionAdapter.ischoosen.intchoosenposition || OptionAdapter.haschoosenratingornot.yesno) {
                     index++
 
-                    if(OptionAdapter.ratingornot.rating == false) {
+                    if(!OptionAdapter.Ratingornot.rating) {
 
                         temp.add(OptionAdapter.recordposition.resultposition.toString())
                         inttemp++
+                        bindViews()
 
                         Log.d("FinalQuiz", inttemp.toString())
                     } else {
 
-
+                        temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
                         inttemp++
-
+                        bindViews()
+                        OptionAdapter.haschoosenratingornot.yesno = false
                     }
-                    bindViews()
+
                 } else{
                 Toast.makeText(this,"Please make a selection", Toast.LENGTH_SHORT).show()
                 }
@@ -89,7 +89,7 @@ class QuestionActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener{
 
             if(OptionAdapter.ischoosen.intchoosenposition || OptionAdapter.haschoosenratingornot.yesno) {
-                if(OptionAdapter.ratingornot.rating == false) {
+                if(!OptionAdapter.Ratingornot.rating) {
                     temp.add(OptionAdapter.recordposition.resultposition.toString())
                 }else{
                     temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
@@ -128,10 +128,7 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
-
     private fun bindViews() {
-
-
 
 
         btnPrevious.visibility = View.GONE
