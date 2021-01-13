@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.fragments.SymptomFragment
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_ingredient_popup.*
 import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
 import kotlinx.android.synthetic.main.activity_question.*
 import org.w3c.dom.Text
@@ -25,29 +26,61 @@ class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
-        val txt : String? = intent.getStringExtra("BODY")
         setUpFirestore()
         setUpEventListener()
+        OptionAdapter.recordresult.resultarray.clear()
     }
 
     private fun setUpEventListener() {
+        var inttemp = OptionAdapter.recordintofposition.intposition
+        val temp = OptionAdapter.recordresult.resultarray
+
+
         btnPrevious.setOnClickListener{
+            inttemp --
+            temp.removeAt(inttemp)
             index--
+            val well = index
             bindViews()
+            Log.d("FinalQuiz",temp.toString())
+            Log.d("FinalQuiz", inttemp.toString())
+            Log.d("FinalQuiz", well.toString())
+
         }
         btnNext.setOnClickListener{
-            index++
-            bindViews()
+                if(OptionAdapter.ischoosen.intchoosenposition) {
+                    index++
+                    temp.add(OptionAdapter.recordposition.resultposition.toString())
+                    inttemp++
+                    bindViews()
+                    Log.d("FinalQuiz", temp.toString())
+                    Log.d("FinalQuiz", inttemp.toString())
+                } else{
+                Toast.makeText(this,"Please make a selection", Toast.LENGTH_SHORT).show()
+                }
+            OptionAdapter.ischoosen.intchoosenposition = false
         }
+
+
         btnSubmit.setOnClickListener{
-            Log.d("FinalQuiz",questions.toString())
+
+            temp.add(OptionAdapter.recordposition.resultposition.toString())
+
+            Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
+
+
+            intent = Intent(this,IngredientPopup::class.java)
+            intent.putExtra("ARRAYLIST", OptionAdapter.recordresult.resultarray.toString())
+            startActivity(intent)
+            OptionAdapter.recordresult.resultarray.clear()
+            finish()
         }
     }
 
     private fun setUpFirestore() {
 
         val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-        var pain:String? = intent.getStringExtra("PAIN")
+        val pain:String? = intent.getStringExtra("PAIN")
 
         Log.d("last",SymptomFragment.myPainType.stuffDone)
 
@@ -62,12 +95,14 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
+
     private fun bindViews() {
         btnPrevious.visibility = View.GONE
         btnSubmit.visibility = View.GONE
         btnNext.visibility = View.GONE
 
-        if(index == 1){
+        Log.d("sizebig", questions!!.size.toString())
+        if(index == 1 && questions!!.size != 1){
             btnNext.visibility = View.VISIBLE
         }else if(index == questions!!.size){
             btnSubmit.visibility = View.VISIBLE

@@ -1,6 +1,7 @@
 package com.example.myapplication.Survey
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,28 +24,63 @@ class OptionAdapter(val context: Context,val question: Question) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionViewHolder {
+
         val view = LayoutInflater.from(context).inflate(R.layout.option_item,parent,false)
         return OptionViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: OptionViewHolder, position: Int) {
         holder.optionView.text = options[position]
+
+
         holder.itemView.setOnClickListener{
+
+            ischoosen.intchoosenposition = true
             question.userAnswer = options[position]
             notifyDataSetChanged()
-            Toast.makeText(context,options[position],Toast.LENGTH_SHORT).show()
+            recordposition.resultposition = position
         }
-        if(question.userAnswer == options[position]){
-            holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
-        }
-        else{
-            holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
 
+
+        if (question.userAnswer == options[position] && options[position] != " ") {
+            Log.d("positionname",options[position])
+            holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
+        }else if (options[position] == " "){
+            holder.itemView.setBackgroundResource(R.drawable.emptyviewfornotselected)
         }
+        else {
+            holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
+        }
+
     }
+
 
     override fun getItemCount(): Int {
         return options.size
     }
 
+    //check if an option is choosen
+    class ischoosen{
+        companion object{
+            var intchoosenposition : Boolean = false
+        }
+    }
+    //record the number of questions that has been answered
+    class recordintofposition{
+        companion object{
+            var intposition = 0
+        }
+    }
+    //record the name of the answer used
+    class recordposition{
+        companion object{
+            var resultposition = 0
+        }
+    }
+    //record all answer in arraylist
+    class recordresult{
+        companion object{
+            var resultarray = arrayListOf<String>()
+        }
+    }
 }
