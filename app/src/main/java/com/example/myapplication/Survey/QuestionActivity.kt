@@ -1,11 +1,13 @@
 package com.example.myapplication.Survey
 
 import android.content.Intent
+import android.media.Rating
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_ingredient_popup.*
 import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
 import kotlinx.android.synthetic.main.activity_question.*
+import kotlinx.android.synthetic.main.rating.*
 import org.w3c.dom.Text
 
 class QuestionActivity : AppCompatActivity() {
@@ -25,17 +28,21 @@ class QuestionActivity : AppCompatActivity() {
     var rating: String = ""
     var index = 1
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
         setUpFirestore()
         setUpEventListener()
         OptionAdapter.recordresult.resultarray.clear()
-    }
 
+        Log.d("123321", OptionAdapter.ratingornot.rating.toString())
+    }
+    private var inttemp = OptionAdapter.recordintofposition.intposition
+    private var temp = OptionAdapter.recordresult.resultarray
     private fun setUpEventListener() {
-        var inttemp = OptionAdapter.recordintofposition.intposition
-        val temp = OptionAdapter.recordresult.resultarray
+
 
         btnPrevious.setOnClickListener{
             inttemp --
@@ -49,26 +56,44 @@ class QuestionActivity : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener{
-                if(OptionAdapter.ischoosen.intchoosenposition) {
+
+/*            var whatisthis = findViewById<RatingBar>(R.id.ratingBar123)
+            var ratie = whatisthis.rating
+            Log.d("ratie",ratie.toString())
+
+            // giving rating of number*/
+
+                if(OptionAdapter.ischoosen.intchoosenposition || OptionAdapter.haschoosenratingornot.yesno) {
                     index++
-                    temp.add(OptionAdapter.recordposition.resultposition.toString())
-                    inttemp++
+
+                    if(OptionAdapter.ratingornot.rating == false) {
+
+                        temp.add(OptionAdapter.recordposition.resultposition.toString())
+                        inttemp++
+
+                        Log.d("FinalQuiz", inttemp.toString())
+                    } else {
+
+
+                        inttemp++
+
+                    }
                     bindViews()
-                    Log.d("FinalQuiz", temp.toString())
-                    Log.d("FinalQuiz", inttemp.toString())
                 } else{
                 Toast.makeText(this,"Please make a selection", Toast.LENGTH_SHORT).show()
                 }
             OptionAdapter.ischoosen.intchoosenposition = false
-        }
+       }
 
 
         btnSubmit.setOnClickListener{
 
-            if(OptionAdapter.ischoosen.intchoosenposition) {
-                temp.add(OptionAdapter.recordposition.resultposition.toString())
-
-                Log.d("FinalQuiz", OptionAdapter.recordresult.resultarray.toString())
+            if(OptionAdapter.ischoosen.intchoosenposition || OptionAdapter.haschoosenratingornot.yesno) {
+                if(OptionAdapter.ratingornot.rating == false) {
+                    temp.add(OptionAdapter.recordposition.resultposition.toString())
+                }else{
+                    temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
+                }
 
 
                 intent = Intent(this, IngredientPopup::class.java)
@@ -105,6 +130,10 @@ class QuestionActivity : AppCompatActivity() {
 
 
     private fun bindViews() {
+
+
+
+
         btnPrevious.visibility = View.GONE
         btnSubmit.visibility = View.GONE
         btnNext.visibility = View.GONE

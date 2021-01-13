@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.myapplication.R
@@ -18,7 +19,6 @@ import org.w3c.dom.Text
 
 private const val ratingtrue = 1
 private const val ratingfalse = 0
-
 
 class OptionAdapter(val context: Context,val question: Question) :
         RecyclerView.Adapter<OptionAdapter.OptionViewHolder>() {
@@ -31,7 +31,7 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     inner class OptionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var optionView = itemView.findViewById<TextView>(R.id.quiz_option)
-        var ratingView = itemView.findViewById<RatingBar>(R.id.ratingBar)
+        var ratingView = itemView.findViewById<RatingBar>(R.id.ratingBar123)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionViewHolder {
@@ -65,8 +65,9 @@ class OptionAdapter(val context: Context,val question: Question) :
             }
         }else{
             Log.d("rating12345",getItemViewType(position).toString())
+            //ratingvalue.ratingvalue = holder.ratingView.rating.toInt()
+            Log.d("rating12345",holder.ratingView.rating.toString())
 
-            //     holder.ratingView.setOnRatingBarChangeListener{ ratingBar: RatingBar, fl: Float, b: Boolean ->
         }
     }
 
@@ -81,11 +82,14 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     override fun getItemCount(): Int {
         if(rating =="false") {
+            ratingornot.rating = false
             return options.size
         } else{
+            ratingornot.rating = true
             return singleoption.size
         }
     }
+
 
     //check if an option is choosen
     class ischoosen{
@@ -109,6 +113,21 @@ class OptionAdapter(val context: Context,val question: Question) :
     class recordresult{
         companion object{
             var resultarray = arrayListOf<String>()
+        }
+    }
+    class ratingvalue{
+        companion object{
+            var ratingvalue = 0
+        }
+    }
+    class ratingornot{
+        companion object{
+            var rating = false
+        }
+    }
+    class haschoosenratingornot{
+        companion object{
+            var yesno = false
         }
     }
 }

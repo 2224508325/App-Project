@@ -9,7 +9,7 @@
     android:layout_marginLeft="80dp">
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBar123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -18,7 +18,7 @@
         android:layout_marginBottom="20dp"
         android:numStars="5"
         android:progressTint="#66ccff"
-        android:rating="2"
+        android:rating="1"
         android:secondaryProgressTint="@color/design_default_color_primary"
         android:stepSize="1"
         app:layout_constraintTop_toBottomOf="@id/introtext"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:text="rate your pain level from 1-5"
-        app:layout_constraintStart_toStartOf="@id/ratingBar"
+        app:layout_constraintStart_toStartOf="@id/ratingBar123"
         app:layout_constraintTop_toTopOf="parent"
         />
 
@@ -39,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="none      some    decent   hurt      lethal"
-        app:layout_constraintTop_toBottomOf="@id/ratingBar"
-        app:layout_constraintStart_toStartOf="@id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar123"
+        app:layout_constraintStart_toStartOf="@id/ratingBar123"
 
         />
 
