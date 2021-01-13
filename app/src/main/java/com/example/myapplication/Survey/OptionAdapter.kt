@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -14,44 +15,65 @@ import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.option_item.view.*
 import org.w3c.dom.Text
 
+
+private const val ratingtrue = 1
+private const val ratingfalse = 0
+
+
 class OptionAdapter(val context: Context,val question: Question) :
     RecyclerView.Adapter<OptionAdapter.OptionViewHolder>() {
 
     private var options: ArrayList<String> = arrayListOf(question.option1,question.option2,question.option3,question.option4,question.option5)
+    private var rating:String = question.rating
+
+
 
     inner class OptionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var optionView = itemView.findViewById<TextView>(R.id.quiz_option)
+        var ratingView = itemView.findViewById<RatingBar>(R.id.ratingBar)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionViewHolder {
-
-        val view = LayoutInflater.from(context).inflate(R.layout.option_item,parent,false)
-        return OptionViewHolder(view)
+        if(viewType == ratingfalse) {
+            val view = LayoutInflater.from(context).inflate(R.layout.option_item, parent, false)
+            return OptionViewHolder(view)
+        }else{
+            val view = LayoutInflater.from(context).inflate(R.layout.rating,parent,false)
+            return OptionViewHolder(view)
+        }
     }
 
     override fun onBindViewHolder(holder: OptionViewHolder, position: Int) {
-        holder.optionView.text = options[position]
 
+        if(getItemViewType(position)== ratingfalse) {
+            holder.optionView.text = options[position]
+            holder.itemView.setOnClickListener {
+                ischoosen.intchoosenposition = true
+                question.userAnswer = options[position]
+                notifyDataSetChanged()
+                recordposition.resultposition = position
+            }
 
-        holder.itemView.setOnClickListener{
-
-            ischoosen.intchoosenposition = true
-            question.userAnswer = options[position]
-            notifyDataSetChanged()
-            recordposition.resultposition = position
+            if (question.userAnswer == options[position] && options[position] != " ") {
+                Log.d("positionname", options[position])
+                holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
+            } else if (options[position] == " ") {
+                holder.itemView.setBackgroundResource(R.drawable.emptyviewfornotselected)
+            } else {
+                holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
+            }
+        }else{
+            Toast.makeText(context,"good job, you",Toast.LENGTH_SHORT).show()
+       //     holder.ratingView.setOnRatingBarChangeListener{ ratingBar: RatingBar, fl: Float, b: Boolean ->
         }
+    }
 
-
-        if (question.userAnswer == options[position] && options[position] != " ") {
-            Log.d("positionname",options[position])
-            holder.itemView.setBackgroundResource(R.drawable.option_item_selected_bg)
-        }else if (options[position] == " "){
-            holder.itemView.setBackgroundResource(R.drawable.emptyviewfornotselected)
+    override fun getItemViewType(position: Int): Int {
+        return if (rating == "false"){
+            ratingfalse
+        }else{
+            ratingtrue
         }
-        else {
-            holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
-        }
-
     }
 
 

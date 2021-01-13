@@ -21,6 +21,8 @@ class QuestionActivity : AppCompatActivity() {
 
     var quizzes : MutableList<Quiz>? = null
     var questions:MutableMap<String,Question>? = null
+    var individualquestion: MutableList<Question>? = null
+    var rating: String = ""
     var index = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,6 @@ class QuestionActivity : AppCompatActivity() {
         var inttemp = OptionAdapter.recordintofposition.intposition
         val temp = OptionAdapter.recordresult.resultarray
 
-
         btnPrevious.setOnClickListener{
             inttemp --
             temp.removeAt(inttemp)
@@ -45,8 +46,8 @@ class QuestionActivity : AppCompatActivity() {
             Log.d("FinalQuiz",temp.toString())
             Log.d("FinalQuiz", inttemp.toString())
             Log.d("FinalQuiz", well.toString())
-
         }
+
         btnNext.setOnClickListener{
                 if(OptionAdapter.ischoosen.intchoosenposition) {
                     index++
@@ -94,6 +95,9 @@ class QuestionActivity : AppCompatActivity() {
                 if(it != null && !it.isEmpty){
                     quizzes = it.toObjects(Quiz::class.java)
                     questions = quizzes!![0].questions
+                    individualquestion = it.toObjects(Question::class.java)
+                    rating = individualquestion!![0].rating
+
                     bindViews()
             }
         }
