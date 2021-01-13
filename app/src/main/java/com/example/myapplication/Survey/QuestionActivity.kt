@@ -101,7 +101,8 @@ class QuestionActivity : AppCompatActivity() {
         btnSubmit.visibility = View.GONE
         btnNext.visibility = View.GONE
 
-        if(index == 1){
+        Log.d("sizebig", questions!!.size.toString())
+        if(index == 1 && questions!!.size != 1){
             btnNext.visibility = View.VISIBLE
         }else if(index == questions!!.size){
             btnSubmit.visibility = View.VISIBLE
