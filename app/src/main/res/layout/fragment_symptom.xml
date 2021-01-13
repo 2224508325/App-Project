@@ -13,6 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageButton
+            android:id="@+id/pelvic"
+            android:layout_width="110dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginRight="82dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pelvic"
+            app:layout_constraintEnd_toEndOf="@+id/right_hand"
+            app:layout_constraintStart_toStartOf="@+id/left_hand"
+            app:layout_constraintTop_toTopOf="@+id/abdomen" />
 
         <ImageButton
             android:id="@+id/upperbody"
@@ -104,22 +120,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.704" />
 
-        <ImageButton
-            android:id="@+id/pelvic"
-            android:layout_width="110dp"
-            android:layout_height="81dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="82dp"
-            android:layout_marginRight="82dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pelvic"
-            app:layout_constraintEnd_toEndOf="@+id/right_hand"
-            app:layout_constraintStart_toStartOf="@+id/left_hand"
-            app:layout_constraintTop_toTopOf="@+id/abdomen" />
+
 
         <ImageButton
             android:id="@+id/abdomen"

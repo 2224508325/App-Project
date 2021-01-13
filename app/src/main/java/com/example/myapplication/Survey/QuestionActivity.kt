@@ -64,18 +64,22 @@ class QuestionActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener{
 
-            temp.add(OptionAdapter.recordposition.resultposition.toString())
+            if(OptionAdapter.ischoosen.intchoosenposition) {
+                temp.add(OptionAdapter.recordposition.resultposition.toString())
 
-            Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
+                Log.d("FinalQuiz", OptionAdapter.recordresult.resultarray.toString())
 
 
-            intent = Intent(this,IngredientPopup::class.java)
-            intent.putExtra("ARRAYLIST", OptionAdapter.recordresult.resultarray.toString())
-            startActivity(intent)
-            OptionAdapter.recordresult.resultarray.clear()
-            finish()
+                intent = Intent(this, IngredientPopup::class.java)
+                intent.putExtra("ARRAYLIST", OptionAdapter.recordresult.resultarray.toString())
+                startActivity(intent)
+                OptionAdapter.recordresult.resultarray.clear()
+                finish()
+            }else {
+                Toast.makeText(this,"Please make a selection", Toast.LENGTH_SHORT).show()
+            }
+            }
         }
-    }
 
     private fun setUpFirestore() {
 
@@ -101,13 +105,14 @@ class QuestionActivity : AppCompatActivity() {
         btnSubmit.visibility = View.GONE
         btnNext.visibility = View.GONE
 
-        Log.d("sizebig", questions!!.size.toString())
-        if(index == 1 && questions!!.size != 1){
+        if(questions!!.size ==1){
+            btnSubmit.visibility = View.VISIBLE
+        } else if(index == 1 && questions!!.size != 1){
             btnNext.visibility = View.VISIBLE
         }else if(index == questions!!.size){
             btnSubmit.visibility = View.VISIBLE
             btnPrevious.visibility = View.VISIBLE
-        } else{
+        }else{
             btnPrevious.visibility = View.VISIBLE
             btnNext.visibility = View.VISIBLE
         }
