@@ -21,9 +21,10 @@ private const val ratingfalse = 0
 
 
 class OptionAdapter(val context: Context,val question: Question) :
-    RecyclerView.Adapter<OptionAdapter.OptionViewHolder>() {
+        RecyclerView.Adapter<OptionAdapter.OptionViewHolder>() {
 
     private var options: ArrayList<String> = arrayListOf(question.option1,question.option2,question.option3,question.option4,question.option5)
+    private var singleoption:ArrayList<String> = arrayListOf(question.option1)
     private var rating:String = question.rating
 
 
@@ -63,8 +64,9 @@ class OptionAdapter(val context: Context,val question: Question) :
                 holder.itemView.setBackgroundResource(R.drawable.option_item_bg)
             }
         }else{
-            Toast.makeText(context,"good job, you",Toast.LENGTH_SHORT).show()
-       //     holder.ratingView.setOnRatingBarChangeListener{ ratingBar: RatingBar, fl: Float, b: Boolean ->
+            Log.d("rating12345",getItemViewType(position).toString())
+
+            //     holder.ratingView.setOnRatingBarChangeListener{ ratingBar: RatingBar, fl: Float, b: Boolean ->
         }
     }
 
@@ -78,7 +80,11 @@ class OptionAdapter(val context: Context,val question: Question) :
 
 
     override fun getItemCount(): Int {
-        return options.size
+        if(rating =="false") {
+            return options.size
+        } else{
+            return singleoption.size
+        }
     }
 
     //check if an option is choosen
