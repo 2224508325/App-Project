@@ -38,7 +38,7 @@ class OptionAdapter(val context: Context,val question: Question) :
             ischoosen.intchoosenposition = true
             question.userAnswer = options[position]
             notifyDataSetChanged()
-            recordposition.resultposition = options[position]
+            recordposition.resultposition = position
         }
 
 
@@ -54,28 +54,30 @@ class OptionAdapter(val context: Context,val question: Question) :
 
     }
 
-    class ischoosen{
-        companion object{
-            var intchoosenposition : Boolean = false
-        }
-    }
 
     override fun getItemCount(): Int {
         return options.size
     }
 
+    //check if an option is choosen
+    class ischoosen{
+        companion object{
+            var intchoosenposition : Boolean = false
+        }
+    }
+    //record the number of questions that has been answered
     class recordintofposition{
         companion object{
             var intposition = 0
         }
     }
-
+    //record the name of the answer used
     class recordposition{
         companion object{
-            var resultposition = " "
+            var resultposition = 0
         }
     }
-
+    //record all answer in arraylist
     class recordresult{
         companion object{
             var resultarray = arrayListOf<String>()

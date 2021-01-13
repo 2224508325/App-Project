@@ -35,9 +35,8 @@ class QuestionActivity : AppCompatActivity() {
         var inttemp = OptionAdapter.recordintofposition.intposition
         val temp = OptionAdapter.recordresult.resultarray
 
+
         btnPrevious.setOnClickListener{
-
-
             inttemp --
             temp.removeAt(inttemp)
             index--
@@ -51,7 +50,7 @@ class QuestionActivity : AppCompatActivity() {
         btnNext.setOnClickListener{
                 if(OptionAdapter.ischoosen.intchoosenposition) {
                     index++
-                    temp.add(OptionAdapter.recordposition.resultposition)
+                    temp.add(OptionAdapter.recordposition.resultposition.toString())
                     inttemp++
                     bindViews()
                     Log.d("FinalQuiz", temp.toString())
@@ -65,7 +64,7 @@ class QuestionActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener{
 
-            temp.add(OptionAdapter.recordposition.resultposition)
+            temp.add(OptionAdapter.recordposition.resultposition.toString())
 
             Log.d("FinalQuiz",OptionAdapter.recordresult.resultarray.toString())
 
