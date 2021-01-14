@@ -39,9 +39,8 @@ class QuestionActivity : AppCompatActivity() {
         OptionAdapter.recordresult.resultarray.clear()
     }
     private var inttemp = OptionAdapter.recordintofposition.intposition
+
     private var temp = OptionAdapter.recordresult.resultarray
-
-
 
 
     private fun setUpEventListener() {
@@ -79,6 +78,7 @@ class QuestionActivity : AppCompatActivity() {
                         }else if(OptionAdapter.recordposition.resultposition.toString() == "4") {
                             inttostringoption = "e"
                         }
+//                        if (OptionAdapter.ratingvalue.ratingvalue.toString() == "1")
                         temp.add(inttostringoption)
                         inttemp++
                         bindViews()
