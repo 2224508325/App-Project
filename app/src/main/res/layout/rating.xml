@@ -2,27 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginLeft="80dp">
+    android:layout_marginTop="8dp">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="1dp"
+        android:layout_height="1dp"/>
 
     <RatingBar
         android:id="@+id/ratingBar123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="171dp"
-        android:layout_marginRight="171dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="8dp"
         android:numStars="5"
         android:progressTint="#66ccff"
         android:rating="0"
         android:secondaryProgressTint="@color/design_default_color_primary"
         android:stepSize="1"
         app:layout_constraintTop_toBottomOf="@id/introtext"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
@@ -32,6 +33,7 @@
         android:text="rate your pain level from 1-5"
         app:layout_constraintStart_toStartOf="@id/ratingBar123"
         app:layout_constraintTop_toTopOf="parent"
+
         />
 
     <TextView
