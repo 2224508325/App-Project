@@ -115,13 +115,9 @@ class QuestionActivity : AppCompatActivity() {
                         inttostringoption = "e"
                     }
                     temp.add(inttostringoption)
-
-
                 }else{
                     temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
                 }
-
-
                 intent = Intent(this, IngredientPopup::class.java)
                 intent.putExtra("ARRAYLIST", OptionAdapter.recordresult.resultarray.toString())
                 startActivity(intent)
