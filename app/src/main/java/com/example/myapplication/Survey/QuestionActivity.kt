@@ -28,6 +28,7 @@ class QuestionActivity : AppCompatActivity() {
     var individualquestion: MutableList<Question>? = null
     var rating: String = ""
     private var index = 1
+    private var inttostringoption = " "
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +68,18 @@ class QuestionActivity : AppCompatActivity() {
 
                     if(!OptionAdapter.Ratingornot.rating) {
 
-                        temp.add(OptionAdapter.recordposition.resultposition.toString())
+                        if (OptionAdapter.recordposition.resultposition.toString() == "0"){
+                            inttostringoption = "a"
+                        }else if(OptionAdapter.recordposition.resultposition.toString() == "1"){
+                            inttostringoption = "b"
+                        }else if(OptionAdapter.recordposition.resultposition.toString() == "2"){
+                            inttostringoption = "c"
+                        }else if(OptionAdapter.recordposition.resultposition.toString() == "3"){
+                            inttostringoption = "d"
+                        }else if(OptionAdapter.recordposition.resultposition.toString() == "4") {
+                            inttostringoption = "e"
+                        }
+                        temp.add(inttostringoption)
                         inttemp++
                         bindViews()
 
@@ -90,7 +102,21 @@ class QuestionActivity : AppCompatActivity() {
 
             if(OptionAdapter.ischoosen.intchoosenposition || OptionAdapter.haschoosenratingornot.yesno) {
                 if(!OptionAdapter.Ratingornot.rating) {
-                    temp.add(OptionAdapter.recordposition.resultposition.toString())
+
+                    if (OptionAdapter.recordposition.resultposition.toString() == "0"){
+                        inttostringoption = "a"
+                    }else if(OptionAdapter.recordposition.resultposition.toString() == "1"){
+                        inttostringoption = "b"
+                    }else if(OptionAdapter.recordposition.resultposition.toString() == "2"){
+                        inttostringoption = "c"
+                    }else if(OptionAdapter.recordposition.resultposition.toString() == "3"){
+                        inttostringoption = "d"
+                    }else if(OptionAdapter.recordposition.resultposition.toString() == "4") {
+                        inttostringoption = "e"
+                    }
+                    temp.add(inttostringoption)
+
+
                 }else{
                     temp.add(OptionAdapter.ratingvalue.ratingvalue.toString())
                 }
