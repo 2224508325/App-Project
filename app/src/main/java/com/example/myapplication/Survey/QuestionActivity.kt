@@ -36,8 +36,6 @@ class QuestionActivity : AppCompatActivity() {
         setUpFirestore()
         setUpEventListener()
         OptionAdapter.recordresult.resultarray.clear()
-
-        Log.d("123321", OptionAdapter.Ratingornot.rating.toString())
     }
     private var inttemp = OptionAdapter.recordintofposition.intposition
     private var temp = OptionAdapter.recordresult.resultarray
