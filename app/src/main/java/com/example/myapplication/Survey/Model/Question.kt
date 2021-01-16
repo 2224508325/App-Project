@@ -1,4 +1,4 @@
-package com.example.myapplication.Survey
+package com.example.myapplication.Survey.Model
 
 data class Question (
     var description : String = " ",

@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        <activity android:name=".Survey.UploadSurvey" />
-        <activity android:name=".Survey.IngredientPopup" />
-        <activity android:name=".Survey.QuestionActivity" />
-        <activity android:name=".Survey.MainHeadPainTypes" />
+        <activity android:name=".UploadSurvey" />
+        <activity android:name=".IngredientPopup" />
+        <activity android:name=".Survey.Class.QuestionActivity" />
+        <activity android:name=".Survey.Class.MainHeadPainTypes" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"

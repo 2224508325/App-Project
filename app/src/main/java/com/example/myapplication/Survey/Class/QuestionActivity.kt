@@ -1,30 +1,26 @@
-package com.example.myapplication.Survey
+package com.example.myapplication.Survey.Class
 
 import android.content.Intent
-import android.media.Rating
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.RatingBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.MainActivity
+import com.example.myapplication.IngredientPopup
 import com.example.myapplication.R
+import com.example.myapplication.Survey.Adapter.OptionAdapter
+import com.example.myapplication.Survey.Model.Question
+import com.example.myapplication.Survey.Model.Quiz
 import com.example.myapplication.fragments.SymptomFragment
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_ingredient_popup.*
-import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
 import kotlinx.android.synthetic.main.activity_question.*
-import kotlinx.android.synthetic.main.rating.*
 
 
 class QuestionActivity : AppCompatActivity() {
 
     var quizzes : MutableList<Quiz>? = null
-    var questions:MutableMap<String,Question>? = null
+    var questions:MutableMap<String, Question>? = null
     var individualquestion: MutableList<Question>? = null
     var rating: String = ""
     private var index = 1

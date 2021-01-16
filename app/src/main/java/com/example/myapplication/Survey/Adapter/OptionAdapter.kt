@@ -1,21 +1,15 @@
-package com.example.myapplication.Survey
+package com.example.myapplication.Survey.Adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.myapplication.R
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.option_item.view.*
-import kotlinx.android.synthetic.main.rating.*
-import org.w3c.dom.Text
+import com.example.myapplication.Survey.Model.Question
 
 
 private const val ratingtrue = 1

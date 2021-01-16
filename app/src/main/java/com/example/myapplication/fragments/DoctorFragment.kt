@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.EricActivity
 import com.example.myapplication.R
-import com.example.myapplication.Survey.UploadSurvey
+import com.example.myapplication.UploadSurvey
 import kotlinx.android.synthetic.main.fragment_doctor.*
 
 

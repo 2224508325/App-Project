@@ -1,15 +1,13 @@
-package com.example.myapplication.Survey
+package com.example.myapplication.Survey.Class
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.annotation.MainThread
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.R
+import com.example.myapplication.Survey.Model.Quiz
+import com.example.myapplication.Survey.Adapter.QuizAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_main_head_pain_types.*
